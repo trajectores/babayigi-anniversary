@@ -1,0 +1,8919 @@
+
+/* =========================================
+   FONT
+   ========================================= */
+
+@font-face {
+    font-family: "StrawberryRuckus";
+    src: url("fonts/StrawberryRuckus.otf") format("opentype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mungil";
+    src: url("fonts/Mungil-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+
+/* =========================================
+   DASAR WEBSITE
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #FFF8EE;
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   PAGE 1 — SECRET
+   ========================================= */
+
+.secret-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.secret-content {
+    width: 100%;
+    max-width: 430px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   EYEBROW
+   ========================================= */
+
+.eyebrow {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   OUR LITTLE STORY
+   ========================================= */
+
+.story-title {
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 35px;
+}
+
+.story-title h1 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 65px;
+    font-weight: normal;
+
+    line-height: 0.85;
+
+    color: #D8286A;
+}
+
+
+/* =========================================
+   PNG DECORATION
+   ========================================= */
+
+.png-1 {
+    position: absolute;
+
+    top: 30px;
+    left: -10px;
+
+    width: 80px;
+    height: auto;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.png-2 {
+    position: absolute;
+
+    top: -35px;
+    right: -58px;
+
+    width: 58px;
+    height: auto;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   INSTRUCTION
+   ========================================= */
+
+.instruction {
+    font-size: 16px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   SECRET CODE BOX
+   ========================================= */
+
+.code-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 300px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================
+   INPUT
+   ========================================= */
+
+#secretCode {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    border: 2px solid #D8286A;
+    border-radius: 12px;
+
+    background: transparent;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 16px;
+
+    color: #D8286A;
+
+    text-align: center;
+
+    outline: none;
+
+    appearance: none;
+}
+
+#secretCode::placeholder {
+    color: #D8286A;
+    opacity: 0.45;
+}
+
+#secretCode:focus {
+    box-shadow:
+        0 0 0 3px rgba(216, 40, 106, 0.12);
+}
+
+
+/* =========================================
+   GIF INPUT
+   ========================================= */
+
+.gif-right {
+    position: absolute;
+
+    right: -30px;
+    top: -28px;
+
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   GENERAL BUTTON RESET
+   ========================================= */
+
+button {
+    -webkit-appearance: none;
+    appearance: none;
+
+    font-family: "Mungil", sans-serif;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   ENTER BUTTON
+   ========================================= */
+
+#enterButton {
+    margin-top: 20px;
+
+    padding: 12px 30px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 30px;
+
+    background: #D8286A;
+    color: #FFF8EE;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+#enterButton:hover {
+    transform: scale(1.05);
+    opacity: 0.92;
+}
+
+#enterButton:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+   ========================================= */
+
+#errorMessage {
+    color: #D8286A;
+
+    opacity: 0;
+    visibility: hidden;
+
+    min-height: 18px;
+
+    margin-top: 10px;
+
+    transition: opacity 0.5s ease;
+}
+
+#errorMessage.show {
+    opacity: 1;
+    visibility: visible;
+
+    animation:
+        errorMessageFade 3.5s ease forwards;
+}
+
+@keyframes errorMessageFade {
+
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   HINT
+   ========================================= */
+
+.hint {
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+   ========================================= */
+
+.floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+.floating-heart {
+    position: absolute;
+
+    bottom: -30px;
+
+    width: 20px;
+    height: 20px;
+
+    background: #D8286A;
+
+    border-radius: 50%;
+
+    transform: rotate(-45deg);
+
+    opacity: 0;
+
+    animation:
+        heartUp 6s linear forwards;
+}
+
+.floating-heart::before,
+.floating-heart::after {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    background: #D8286A;
+
+    border-radius: 50%;
+}
+
+.floating-heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.floating-heart::after {
+    top: 0;
+    left: 10px;
+}
+
+@keyframes heartUp {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(-45deg)
+            scale(0.5);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.25;
+    }
+
+    70% {
+        opacity: 0.15;
+    }
+
+    100% {
+        transform:
+            translate(
+                var(--move-x),
+                -110vh
+            )
+            rotate(-45deg)
+            scale(1);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   WRONG CODE POPUP
+   ========================================= */
+
+.wrong-popup {
+    position: fixed;
+
+    left: 50%;
+    bottom: 40%;
+
+    transform:
+        translateX(-50%)
+        scale(0.8);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+.wrong-popup img {
+    width: 200px;
+    height: auto;
+
+    display: block;
+}
+
+.wrong-popup.show {
+    opacity: 1;
+    visibility: visible;
+
+    animation:
+        wrongPopup 3.5s ease forwards;
+}
+
+@keyframes wrongPopup {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.8);
+    }
+
+    15% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    75% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.95);
+    }
+}
+
+
+/* =========================================
+   PAGE 2 — ANNIVERSARY
+   ========================================= */
+
+.anniversary-page {
+    min-height: 100vh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px 25px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.anniversary-content {
+    width: 100%;
+    max-width: 380px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   GIFT GIF
+   ========================================= */
+
+.gift-gif {
+    width: 150px;
+    height: 150px;
+
+    object-fit: contain;
+
+    margin: 15px 0;
+
+    /* GIF tetap bergerak */
+    animation: none;
+}
+
+
+/* =========================================
+   ANNIVERSARY MESSAGE
+   ========================================= */
+
+.anniversary-message {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #D8286A;
+
+    margin: 5px 0 25px;
+
+    opacity: 0;
+
+    animation:
+        messageAppear 1s ease forwards;
+
+    animation-delay: 0.8s;
+}
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   NEXT BUTTON
+   ========================================= */
+
+.next-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 85px;
+    min-height: 40px;
+
+    padding: 11px 28px;
+
+    border: 0;
+    border-width: 0;
+    border-style: none;
+
+    outline: none;
+
+    border-radius: 30px;
+
+    background-color: #D8286A !important;
+    color: #FFF8EE !important;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    animation:
+        nextAppear 1s ease forwards;
+
+    animation-delay: 2.5s;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+@keyframes nextAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.next-button:hover {
+    background-color: #D8286A !important;
+
+    transform: scale(1.05);
+
+    opacity: 0.92;
+}
+
+.next-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   PAGE 3 — MEMORY
+   ========================================= */
+
+.story-page {
+    min-height: 100vh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px 22px;
+
+    position: relative;
+    z-index: 1;
+
+    overflow-y: auto;
+}
+
+.memory-content {
+    width: 100%;
+    max-width: 420px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   MEMORY CARD
+   ========================================= */
+
+.memory-card {
+    width: 100%;
+
+    background: #FFFFFF;
+
+    border: 1px solid #F1D8E2;
+
+    border-radius: 24px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(216, 40, 106, 0.08);
+
+    overflow: hidden;
+
+    animation:
+        memoryAppear 0.8s ease forwards;
+}
+
+@keyframes memoryAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.97);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   FOTO — HORIZONTAL 4:3
+   ========================================= */
+
+.memory-photo {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #FFF8EE;
+
+    border: 7px solid #F6B6CC;
+
+    border-radius: 18px;
+
+    margin: 0 auto;
+
+    box-shadow:
+        0 4px 12px
+        rgba(216, 40, 106, 0.12);
+}
+
+
+/* =========================================
+   MEMORY DATE
+   ========================================= */
+
+.memory-date {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #D8286A;
+
+    margin: 20px 0 15px;
+}
+
+
+/* =========================================
+   MEMORY TEXT
+   ========================================= */
+
+.memory-text {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #6F4B58;
+
+    margin: 0 5px 5px;
+}
+
+
+/* =========================================
+   PAGE 3 NAVIGATION
+   BACK + NEXT MENYAMPING
+   ========================================= */
+
+.memory-navigation {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.back-button {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 85px;
+    min-height: 40px;
+
+    margin-top: 0;
+
+    padding: 11px 28px;
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+
+    outline: none;
+
+    border-radius: 30px;
+
+    background: #D8286A !important;
+    background-color: #D8286A !important;
+
+    color: #FFF8EE !important;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    opacity: 1;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.back-button:hover {
+    background: #D8286A !important;
+    background-color: #D8286A !important;
+
+    color: #FFF8EE !important;
+
+    transform: scale(1.05);
+
+    opacity: 0.92;
+}
+
+.back-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   PAGE 3 NEXT BUTTON
+   ========================================= */
+
+.next-memory-button {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 85px;
+    min-height: 40px;
+
+    margin-top: 0;
+
+    padding: 11px 28px;
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+
+    outline: none;
+
+    border-radius: 30px;
+
+    background: #D8286A !important;
+    background-color: #D8286A !important;
+
+    color: #FFF8EE !important;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.next-memory-button:hover {
+    background: #D8286A !important;
+    background-color: #D8286A !important;
+
+    color: #FFF8EE !important;
+
+    transform: scale(1.05);
+
+    opacity: 0.92;
+}
+
+.next-memory-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   BUTTON FOCUS
+   ========================================= */
+
+.next-button:focus,
+.back-button:focus,
+.next-memory-button:focus {
+    outline: none;
+}
+
+
+/* =========================================
+   PAGE 4 — MUSIC + MEMORIES
+   ========================================= */
+
+.page-four {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    text-align: center;
+
+    padding: 50px 20px 80px;
+
+    position: relative;
+    z-index: 1;
+
+    overflow-x: hidden;
+}
+
+.page-four-content {
+    width: 100%;
+    max-width: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   MUSIC INTRO
+   ========================================= */
+
+.music-intro {
+    min-height: 85vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.music-text {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 17px;
+
+    color: #D8286A;
+
+    margin-bottom: 22px;
+}
+
+.music-control {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+}
+
+.music-play-button {
+    min-width: 85px;
+    min-height: 40px;
+
+    padding: 11px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #D8286A;
+
+    color: #FFF8EE;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.music-play-button:hover {
+    transform: scale(1.05);
+
+    opacity: 0.9;
+}
+
+.music-play-button:active {
+    transform: scale(0.97);
+}
+
+.music-gif {
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MEMORIES CONTAINER
+   ========================================= */
+
+.memories-container {
+    width: 100%;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   POLAROID
+   ========================================= */
+
+.memory-polaroid {
+    position: relative;
+
+    width: 100%;
+    max-width: 350px;
+
+    background: #FFFFFF;
+
+    padding: 15px 15px 22px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(216, 40, 106, 0.10);
+
+    opacity: 0;
+
+    transform:
+        translateY(60px)
+        scale(0.97);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+
+    margin-bottom: 38vh;
+}
+
+.memory-polaroid.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================
+   POLAROID PHOTO — 4:3
+   ========================================= */
+
+.polaroid-photo {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    background: #FFF8EE;
+}
+
+.polaroid-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   CAPTION
+   ========================================= */
+
+.polaroid-caption {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #6F4B58;
+
+    margin-top: 16px;
+
+    min-height: 24px;
+}
+
+
+/* =========================================
+   POLAROID TILT
+   ========================================= */
+
+.memory-one {
+    transform:
+        rotate(-2deg)
+        translateY(60px)
+        scale(0.97);
+}
+
+.memory-two {
+    transform:
+        rotate(2deg)
+        translateY(60px)
+        scale(0.97);
+}
+
+.memory-three {
+    transform:
+        rotate(-1.5deg)
+        translateY(60px)
+        scale(0.97);
+}
+
+.memory-four {
+    transform:
+        rotate(2.5deg)
+        translateY(60px)
+        scale(0.97);
+}
+
+.memory-one.visible {
+    transform:
+        rotate(-2deg)
+        translateY(0)
+        scale(1);
+}
+
+.memory-two.visible {
+    transform:
+        rotate(2deg)
+        translateY(0)
+        scale(1);
+}
+
+.memory-three.visible {
+    transform:
+        rotate(-1.5deg)
+        translateY(0)
+        scale(1);
+}
+
+.memory-four.visible {
+    transform:
+        rotate(2.5deg)
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================
+   GIF DECORATION
+   ========================================= */
+
+.polaroid-gif {
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+.gif-one {
+    top: -42px;
+    right: -25px;
+}
+
+.gif-two {
+    bottom: -35px;
+    left: -30px;
+}
+
+.gif-three {
+    top: -38px;
+    left: -28px;
+}
+
+.gif-four {
+    bottom: -38px;
+    right: -28px;
+}
+
+
+/* =========================================
+   PAGE 4 FINAL NAVIGATION
+   ========================================= */
+
+.memory-four-navigation {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: -15vh;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.memory-four-navigation.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.back-four-button,
+.next-four-button {
+    min-width: 85px;
+    min-height: 40px;
+
+    padding: 11px 27px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #D8286A;
+
+    color: #FFF8EE;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.back-four-button:hover,
+.next-four-button:hover {
+    transform: scale(1.05);
+
+    opacity: 0.92;
+}
+
+.back-four-button:active,
+.next-four-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   PAGE 4 BUTTON FOCUS
+   ========================================= */
+
+.music-play-button:focus,
+.back-four-button:focus,
+.next-four-button:focus {
+    outline: none;
+}
+
+
+/* =========================================
+   HP
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    .secret-page {
+        padding: 25px 18px;
+    }
+
+    .story-title h1 {
+        font-size: 55px;
+    }
+
+    .png-1 {
+        width: 45px;
+
+        top: 48px;
+        left: 75px;
+    }
+
+    .png-2 {
+        width: 42px;
+
+        top: 48px;
+        right: 25px;
+    }
+
+    .code-box {
+        max-width: 270px;
+    }
+
+    .gif-right {
+        width: 70px;
+        height: 70px;
+
+        right: -50px;
+    }
+
+    .anniversary-page {
+        padding: 25px 18px;
+    }
+
+    .gift-gif {
+        width: 135px;
+        height: 135px;
+    }
+
+    .anniversary-message {
+        font-size: 15px;
+    }
+
+    .story-page {
+        padding: 25px 18px;
+    }
+
+    .memory-content {
+        max-width: 100%;
+    }
+
+    .memory-card {
+        padding: 14px;
+
+        border-radius: 20px;
+    }
+
+    .memory-photo {
+        width: 100%;
+
+        aspect-ratio: 4 / 3;
+
+        border-width: 6px;
+
+        border-radius: 14px;
+
+        object-fit: cover;
+    }
+
+    .memory-date {
+        font-size: 11px;
+
+        letter-spacing: 1.7px;
+
+        margin-top: 17px;
+        margin-bottom: 13px;
+    }
+
+    .memory-text {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .next-button,
+    .back-button,
+    .next-memory-button {
+        min-width: 85px;
+        min-height: 40px;
+
+        padding: 11px 27px;
+
+        font-size: 13px;
+    }
+
+
+    /* PAGE 4 */
+
+    .page-four {
+        padding: 40px 18px 70px;
+    }
+
+    .music-text {
+        font-size: 15px;
+    }
+
+    .music-gif {
+        width: 65px;
+        height: 65px;
+    }
+
+    .memory-polaroid {
+        max-width: 100%;
+
+        padding: 12px 12px 20px;
+
+        margin-bottom: 38vh;
+    }
+
+    .polaroid-caption {
+        font-size: 14px;
+    }
+
+    .polaroid-gif {
+        width: 62px;
+        height: 62px;
+    }
+
+    .gif-one {
+        top: -35px;
+        right: -20px;
+    }
+
+    .gif-two {
+        bottom: -30px;
+        left: -22px;
+    }
+
+    .gif-three {
+        top: -32px;
+        left: -22px;
+    }
+
+    .gif-four {
+        bottom: -32px;
+        right: -22px;
+    }
+
+}
+
+
+/* =========================================
+   HP SANGAT KECIL
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .story-title h1 {
+        font-size: 48px;
+    }
+
+    .png-1 {
+        width: 40px;
+
+        left: 65px;
+        top: 42px;
+    }
+
+    .png-2 {
+        width: 38px;
+
+        right: 20px;
+        top: 43px;
+    }
+
+    .gif-right {
+        width: 62px;
+        height: 62px;
+
+        right: -43px;
+    }
+
+    .memory-card {
+        padding: 12px;
+    }
+
+    .memory-photo {
+        aspect-ratio: 4 / 3;
+
+        border-width: 5px;
+    }
+
+    .memory-text {
+        font-size: 13px;
+    }
+
+    .memory-polaroid {
+        padding: 10px 10px 18px;
+    }
+
+    .polaroid-caption {
+        font-size: 13px;
+    }
+
+    .polaroid-gif {
+        width: 55px;
+        height: 55px;
+    }
+
+}
+
+/* =====================================================
+   PAGE 5 — LITTLE THINGS ABOUT US
+   ===================================================== */
+
+.page-five {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    background: #FFF8EE;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.page-five-content {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 55px 22px 80px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE 5 HEADER
+   ===================================================== */
+
+.page-five-header {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.top-decoration {
+    color: #D8286A;
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.page-five-small-title {
+    font-size: 14px;
+    margin: 0 0 5px;
+    color: #D8286A;
+}
+
+.page-five-title {
+    font-family: "StrawberryRuckus", cursive;
+    font-size: 54px;
+    line-height: 0.9;
+    color: #D8286A;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.page-five-subtitle {
+    font-family: "Mungil", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #D8286A;
+    margin: 18px auto 0;
+    max-width: 280px;
+}
+
+
+/* =====================================================
+   GENERAL MEMORY
+   ===================================================== */
+
+.page-five-memory {
+    position: relative;
+    min-height: 420px;
+    margin-bottom: 70px;
+
+    opacity: 0;
+    transform: translateY(60px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.page-five-memory.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   GIF
+   ===================================================== */
+
+.gif-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-five-gif {
+    width: 180px;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =====================================================
+   CAPTION
+   ===================================================== */
+
+.page-five-caption {
+    position: absolute;
+
+    background: #ffffff;
+    border: 1.5px solid rgba(216, 40, 106, 0.35);
+
+    padding: 18px 20px;
+
+    box-shadow:
+        4px 5px 0 rgba(216, 40, 106, 0.08);
+
+    max-width: 220px;
+
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+.page-five-caption p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   DECORATIONS
+   ===================================================== */
+
+.floating-decoration,
+.tiny-decoration {
+    position: absolute;
+    color: #D8286A;
+    pointer-events: none;
+}
+
+.floating-decoration {
+    font-size: 26px;
+}
+
+.tiny-decoration {
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   MEMORY 1
+   GIF CENTER
+   CAPTION BELOW
+   ===================================================== */
+
+.memory-five-one {
+    min-height: 430px;
+}
+
+.gif-wrapper-one {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+}
+
+.memory-five-one .page-five-gif {
+    width: 210px;
+    aspect-ratio: 4 / 3; }
+
+
+.caption-one {
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+}
+
+.decoration-one {
+    top: 20px;
+    right: 45px;
+    transform: rotate(15deg);
+}
+
+.decoration-one-bottom {
+    top: 385px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* =====================================================
+   MEMORY 2
+   GIF RIGHT
+   CAPTION LEFT
+   ===================================================== */
+
+.memory-five-two {
+    min-height: 430px;
+}
+
+.gif-wrapper-two {
+    top: 35px;
+    right: 5px;
+    transform: rotate(4deg);
+}
+
+.memory-five-two .page-five-gif {
+    width: 185px;
+    aspect-ratio: 4 / 3; }
+
+.caption-two {
+    top: 95px;
+    left: 0;
+    transform: rotate(-3deg);
+}
+
+.decoration-two {
+    top: 15px;
+    left: 20px;
+    font-size: 30px;
+    transform: rotate(-10deg);
+}
+
+.decoration-two-bottom {
+    right: 40px;
+    bottom: 35px;
+}
+
+
+/* =====================================================
+   MEMORY 3
+   GIF LEFT / CENTER
+   CAPTION BELOW
+   ===================================================== */
+
+.memory-five-three {
+    min-height: 440px;
+}
+
+.gif-wrapper-three {
+    top: 5px;
+    left: 35px;
+    transform: rotate(-5deg);
+}
+
+.memory-five-three .page-five-gif {
+    width: 200px;
+    aspect-ratio: 4 / 3; }
+
+.caption-three {
+    top: 245px;
+    right: 10px;
+    transform: rotate(3deg);
+}
+
+.decoration-three-top {
+    position: absolute;
+    top: 0;
+    right: 35px;
+    font-size: 18px;
+}
+
+.decoration-three {
+    top: 145px;
+    right: 35px;
+    font-size: 32px;
+}
+
+
+/* =====================================================
+   MEMORY 4
+   CAPTION LEFT
+   GIF RIGHT
+   ===================================================== */
+
+.memory-five-four {
+    min-height: 450px;
+}
+
+.caption-four {
+    top: 75px;
+    left: 0;
+    transform: rotate(-2deg);
+}
+
+.gif-wrapper-four {
+    top: 10px;
+    right: 0;
+    transform: rotate(5deg);
+}
+
+.memory-five-four .page-five-gif {
+    width: 195px;
+    aspect-ratio: 4 / 3; }
+
+.decoration-four {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 17px;
+}
+
+.decoration-four-bottom {
+    bottom: 25px;
+    right: 50px;
+}
+
+
+/* =====================================================
+   ENDING
+   ===================================================== */
+
+.page-five-ending {
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    padding-top: 20px;
+}
+
+.page-five-ending.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ending-decoration {
+    color: #D8286A;
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.ending-text {
+    font-family: "Mungil", sans-serif;
+    color: #D8286A;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 auto 30px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.page-five-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.back-five-button,
+.next-five-button {
+    border: none;
+    background: #D8286A;
+    color: #FFF8EE;
+
+    font-family: "Mungil", sans-serif;
+
+    padding: 11px 22px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.back-five-button:hover,
+.next-five-button:hover {
+    transform: translateY(-2px);
+}
+
+.back-five-button:active,
+.next-five-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .page-five-content {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .page-five-title {
+        font-size: 48px;
+    }
+
+    .page-five-header {
+        margin-bottom: 80px;
+    }
+
+    .page-five-memory {
+        min-height: 390px;
+    }
+
+    .page-five-gif {
+        max-width: 100%;
+    }
+
+    .memory-five-one .page-five-gif {
+        width: 190px;
+        aspect-ratio: 4 / 3; }
+
+    .caption-one {
+        top: 225px;
+    }
+
+    .memory-five-two .page-five-gif {
+        width: 165px;
+        aspect-ratio: 4 / 3; }
+
+    .memory-five-three .page-five-gif {
+        width: 175px;
+        aspect-ratio: 4 / 3; }
+
+    .memory-five-four .page-five-gif {
+        width: 175px;
+        aspect-ratio: 4 / 3; }
+
+    .page-five-caption {
+        font-size: 13px;
+        max-width: 190px;
+        padding: 15px 16px;
+    }
+
+    .caption-two {
+        left: -5px;
+    }
+
+    .caption-four {
+        left: -5px;
+    }
+
+    .decoration-one {
+        right: 20px;
+    }
+
+    .decoration-two {
+        left: 5px;
+    }
+
+    .decoration-three {
+        right: 15px;
+    }
+
+    .decoration-four-bottom {
+        right: 20px;
+    }
+}
+
+/* =====================================================
+   PAGE 6 — OUR WISHES
+   ===================================================== */
+
+.page-six {
+    display: none;
+    min-height: 100vh;
+    background: #FFF8EE;
+    padding: 70px 20px 100px;
+    box-sizing: border-box;
+}
+
+.page-six-content {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.page-six-header {
+    margin-bottom: 35px;
+}
+
+.page-six-decoration {
+    color: #D8286A;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.page-six-small-title {
+    font-family: "Mungil", sans-serif;
+    color: #D8286A;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.page-six-title {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 48px;
+    line-height: .9;
+    margin: 0 0 18px;
+}
+
+.page-six-subtitle {
+    font-family: "Mungil", sans-serif;
+    color: #5e4b50;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FIRST WISH
+   ========================= */
+
+.first-wish-section {
+    margin-top: 30px;
+}
+
+.first-wish-title {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.first-wish-description {
+    font-family: "Mungil", sans-serif;
+    color: #6c565d;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.wish-input {
+    width: 100%;
+    min-height: 135px;
+    box-sizing: border-box;
+
+    border: 1.5px solid #e7a6bb;
+    border-radius: 18px;
+
+    background: #fffdf9;
+
+    padding: 17px;
+
+    resize: vertical;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 15px;
+    color: #4f3d43;
+
+    outline: none;
+
+    box-shadow: 0 8px 20px rgba(216, 40, 106, .07);
+
+    transition: .25s ease;
+}
+
+.wish-input:focus {
+    border-color: #D8286A;
+    box-shadow: 0 8px 25px rgba(216, 40, 106, .14);
+}
+
+.wish-input::placeholder {
+    color: #c6aeb6;
+}
+
+.wish-counter {
+    text-align: right;
+    color: #b796a0;
+    font-family: "Mungil", sans-serif;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.send-wish-button,
+.save-all-wishes-button,
+.unlock-secret-button,
+.open-our-wishes-button {
+    border: none;
+    border-radius: 999px;
+
+    background: #D8286A;
+    color: white;
+
+    padding: 13px 25px;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 18px rgba(216, 40, 106, .18);
+
+    transition: .25s ease;
+}
+
+.send-wish-button:hover,
+.save-all-wishes-button:hover,
+.unlock-secret-button:hover,
+.open-our-wishes-button:hover {
+    transform: translateY(-2px);
+}
+
+.send-wish-button {
+    margin-top: 18px;
+}
+
+.wish-status {
+    min-height: 20px;
+    margin-top: 12px;
+
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+}
+
+
+/* =========================
+   POPUP
+   ========================= */
+
+.wish-popup-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(55, 32, 40, .38);
+
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+.wish-popup-overlay.active {
+    display: flex;
+    animation: popupOverlayIn .35s ease;
+}
+
+@keyframes popupOverlayIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.wish-popup {
+    width: 100%;
+    max-width: 350px;
+
+    background: #FFF8EE;
+
+    border: 2px solid #f0c4d2;
+
+    border-radius: 28px;
+
+    padding: 32px 24px 27px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    box-shadow: 0 20px 60px rgba(70, 30, 45, .2);
+
+    animation: popupIn .4s ease;
+}
+
+@keyframes popupIn {
+    from {
+        transform: scale(.88) translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.popup-close {
+    position: absolute;
+
+    right: 14px;
+    top: 10px;
+
+    border: none;
+    background: none;
+
+    color: #d8a3b4;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.popup-small-title {
+    color: #D8286A;
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.popup-title {
+    color: #D8286A;
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 32px;
+    line-height: 1;
+
+    margin: 0 0 13px;
+}
+
+.popup-text {
+    color: #5f4c52;
+    font-family: "Mungil", sans-serif;
+
+    font-size: 14px;
+    line-height: 1.65;
+
+    white-space: pre-line;
+}
+
+.popup-gif {
+    width: 120px;
+    max-height: 120px;
+
+    object-fit: contain;
+
+    margin: 12px auto;
+
+    display: block;
+}
+
+.popup-next-button {
+    border: none;
+    background: #D8286A;
+    color: white;
+
+    border-radius: 999px;
+
+    padding: 11px 25px;
+
+    font-family: "Mungil", sans-serif;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.popup-next-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   EXTRA WISHES
+   ========================= */
+
+.extra-wishes-section {
+    display: none;
+
+    margin-top: 50px;
+
+    animation: sectionFade .6s ease;
+}
+
+.extra-wishes-section.active {
+    display: block;
+}
+
+@keyframes sectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.extra-wishes-header {
+    margin-bottom: 30px;
+}
+
+.extra-wishes-decoration {
+    color: #D8286A;
+}
+
+.extra-wishes-small-title {
+    color: #D8286A;
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+}
+
+.extra-wishes-header h3 {
+    color: #D8286A;
+    font-family: "StrawberryRuckus", sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    margin: 8px 0 13px;
+}
+
+.extra-wishes-header p {
+    color: #6c565d;
+    font-family: "Mungil", sans-serif;
+    line-height: 1.6;
+}
+
+.extra-wish-box {
+    background: #fffdf9;
+
+    border: 1.5px solid #edc2cf;
+
+    border-radius: 24px;
+
+    padding: 23px 18px;
+
+    margin-bottom: 22px;
+
+    text-align: left;
+
+    box-shadow: 0 8px 22px rgba(216, 40, 106, .06);
+}
+
+.extra-wish-number {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 12px;
+}
+
+.extra-wish-box h4 {
+    color: #D8286A;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 27px;
+
+    margin: 5px 0;
+}
+
+.extra-wish-box p {
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 13px;
+}
+
+.save-all-wishes-button {
+    margin-top: 8px;
+}
+
+
+/* =========================
+   UNLOCK SECTION
+   ========================= */
+
+.unlock-section {
+    display: none;
+
+    margin-top: 55px;
+
+    padding: 30px 20px;
+
+    border-top: 1px dashed #e2a8ba;
+    border-bottom: 1px dashed #e2a8ba;
+
+    animation: sectionFade .7s ease;
+}
+
+.unlock-section.active {
+    display: block;
+}
+
+.unlock-decoration {
+    color: #D8286A;
+}
+
+.unlock-small-title {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+}
+
+.unlock-section h3 {
+    color: #D8286A;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 38px;
+    line-height: .95;
+
+    margin: 10px 0 15px;
+}
+
+.unlock-section > p {
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    line-height: 1.6;
+}
+
+.unlock-secret-button {
+    margin-top: 17px;
+}
+
+
+/* =========================
+   CODE UNLOCK
+   ========================= */
+
+.code-unlock-section {
+    display: none;
+
+    margin-top: 50px;
+
+    animation: sectionFade .7s ease;
+}
+
+.code-unlock-section.active {
+    display: block;
+}
+
+.code-decoration {
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.code-small-title {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+}
+
+.code-unlock-section h3 {
+    color: #D8286A;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 40px;
+    line-height: .95;
+
+    margin: 10px 0 15px;
+}
+
+.code-unlock-section > p {
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    line-height: 1.6;
+}
+
+.our-wish-code {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 20px;
+
+    border: 1.5px solid #e3a9bb;
+    border-radius: 999px;
+
+    background: #fffdf9;
+
+    padding: 14px 18px;
+
+    text-align: center;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 16px;
+
+    outline: none;
+}
+
+.our-wish-code:focus {
+    border-color: #D8286A;
+}
+
+.open-our-wishes-button {
+    margin-top: 13px;
+}
+
+.code-error {
+    color: #D8286A !important;
+
+    font-size: 13px;
+
+    min-height: 20px;
+}
+
+
+/* =========================
+   OUR WISHES
+   ========================= */
+
+.our-wishes-section {
+    display: none;
+
+    margin-top: 55px;
+
+    animation: sectionFade .8s ease;
+}
+
+.our-wishes-section.active {
+    display: block;
+}
+
+.our-wishes-header {
+    margin-bottom: 30px;
+}
+
+.our-wishes-decoration {
+    color: #D8286A;
+}
+
+.our-wishes-small-title {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+}
+
+.our-wishes-header h3 {
+    color: #D8286A;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 50px;
+
+    line-height: .85;
+
+    margin: 9px 0 15px;
+}
+
+.our-wishes-header > p:last-child {
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   WISH CARDS
+   ========================= */
+
+.our-wish-card {
+    position: relative;
+
+    background: #fffdf9;
+
+    border: 1.5px solid #e8bdca;
+
+    border-radius: 22px;
+
+    padding: 25px 20px;
+
+    margin-bottom: 24px;
+
+    box-shadow: 0 9px 25px rgba(216, 40, 106, .07);
+
+    text-align: left;
+
+    opacity: 0;
+    transform: translateY(25px) rotate(-1deg);
+
+    animation: wishCardReveal .65s ease forwards;
+}
+
+.our-wish-card:nth-child(even) {
+    transform: translateY(25px) rotate(1deg);
+}
+
+@keyframes wishCardReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-1deg);
+    }
+}
+
+.our-wish-card:nth-child(even) {
+    animation-name: wishCardRevealEven;
+}
+
+@keyframes wishCardRevealEven {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(1deg);
+    }
+}
+
+.our-wish-label {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.our-wish-number {
+    position: absolute;
+
+    right: 18px;
+    top: 16px;
+
+    color: #d9b3bf;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 12px;
+}
+
+.our-wish-text {
+    color: #56454b;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+
+    margin: 0;
+}
+
+.our-wishes-ending {
+    margin-top: 45px;
+
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.ending-love {
+    color: #D8286A;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.page-six-ending {
+    display: none;
+
+    margin-top: 55px;
+
+    animation: sectionFade .7s ease;
+}
+
+.page-six-ending.active {
+    display: block;
+}
+
+.page-six-navigation {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.back-six-button,
+.next-six-button {
+    border: none;
+
+    border-radius: 999px;
+
+    padding: 11px 24px;
+
+    font-family: "Mungil", sans-serif;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.back-six-button {
+    background: #f3dce4;
+    color: #9b6174;
+}
+
+.next-six-button {
+    background: #D8286A;
+    color: white;
+}
+
+.back-six-button:hover,
+.next-six-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .page-six {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .page-six-title {
+        font-size: 42px;
+    }
+
+    .our-wishes-header h3 {
+        font-size: 44px;
+    }
+
+}
+
+/* =====================================================
+   PAGE 7 — OUR LITTLE PLANS
+   ===================================================== */
+
+.page-seven {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    background: #FFF8EE;
+    overflow: hidden;
+}
+
+.page-seven-content {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/* =====================================================
+   MAGICAL OPENING
+   ===================================================== */
+
+.page-seven-opening {
+    min-height: 100vh;
+    padding: 70px 25px 50px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.page-seven-sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.page-seven-sparkles span {
+    position: absolute;
+    color: #D8286A;
+    opacity: 0;
+    animation: magicalSparkle 4s infinite ease-in-out;
+}
+
+.page-seven-sparkles span:nth-child(1) {
+    top: 15%;
+    left: 18%;
+    font-size: 18px;
+}
+
+.page-seven-sparkles span:nth-child(2) {
+    top: 24%;
+    right: 15%;
+    font-size: 13px;
+    animation-delay: .5s;
+}
+
+.page-seven-sparkles span:nth-child(3) {
+    top: 40%;
+    left: 10%;
+    font-size: 22px;
+    animation-delay: 1s;
+}
+
+.page-seven-sparkles span:nth-child(4) {
+    top: 47%;
+    right: 9%;
+    font-size: 15px;
+    animation-delay: 1.4s;
+}
+
+.page-seven-sparkles span:nth-child(5) {
+    bottom: 25%;
+    left: 17%;
+    font-size: 12px;
+    animation-delay: 1.8s;
+}
+
+.page-seven-sparkles span:nth-child(6) {
+    bottom: 20%;
+    right: 19%;
+    font-size: 20px;
+    animation-delay: 2.2s;
+}
+
+.page-seven-sparkles span:nth-child(7) {
+    bottom: 12%;
+    left: 48%;
+    font-size: 17px;
+    animation-delay: 2.6s;
+}
+
+@keyframes magicalSparkle {
+
+    0% {
+        opacity: 0;
+        transform: scale(.4) rotate(-20deg);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+
+    60% {
+        opacity: .7;
+        transform: scale(1.15) rotate(10deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.5) rotate(25deg);
+    }
+
+}
+
+.page-seven-opening-gif {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    margin-bottom: 15px;
+
+    animation:
+        openingFloat 3s ease-in-out infinite,
+        openingAppear 1s ease forwards;
+}
+
+@keyframes openingFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+
+}
+
+@keyframes openingAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.page-seven-small-title {
+    font-family: "Mungil", sans-serif;
+    font-size: 14px;
+    color: #D8286A;
+    margin: 0 0 12px;
+}
+
+.page-seven-title {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 34px;
+    line-height: .95;
+    letter-spacing: 1px;
+    margin: 0;
+
+    animation: titleMagical 1.2s ease forwards;
+}
+
+@keyframes titleMagical {
+
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(.94);
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+
+}
+
+.page-seven-subtitle {
+    font-family: "Mungil", sans-serif;
+    color: #704C59;
+    font-size: 13px;
+    line-height: 1.65;
+    margin: 22px 0 0;
+}
+
+.page-seven-scroll-hint {
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    color: #D8286A;
+    font-family: "Mungil", sans-serif;
+    font-size: 11px;
+
+    animation: scrollHint 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+    font-size: 18px;
+}
+
+@keyframes scrollHint {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: .55;
+    }
+
+    50% {
+        transform: translateY(7px);
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   PLAN CARDS
+   ===================================================== */
+
+.plan-card {
+    width: calc(100% - 42px);
+    margin: 70px auto;
+
+    padding: 25px 22px 22px;
+
+    box-sizing: border-box;
+
+    background: #FFFDF8;
+
+    border: 1.5px solid rgba(216, 40, 106, .25);
+
+    border-radius: 4px;
+
+    position: relative;
+
+    box-shadow:
+        0 12px 30px rgba(120, 70, 80, .08);
+
+    opacity: 0;
+    transform: translateY(80px) rotate(2deg);
+
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.plan-card.visible {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+}
+
+.plan-card-one.visible {
+    transform: translateY(0) rotate(-1.5deg);
+}
+
+.plan-card-two.visible {
+    transform: translateY(0) rotate(1.2deg);
+}
+
+.plan-card-three.visible {
+    transform: translateY(0) rotate(-1deg);
+}
+
+.plan-card-four.visible {
+    transform: translateY(0) rotate(1.5deg);
+}
+
+.plan-card-five.visible {
+    transform: translateY(0) rotate(-1.3deg);
+}
+
+.plan-tape {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-3deg);
+
+    width: 65px;
+    height: 27px;
+
+    background: rgba(216, 40, 106, .15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+}
+
+.plan-number {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    font-family: "StrawberryRuckus", sans-serif;
+    font-size: 24px;
+    color: rgba(216, 40, 106, .3);
+}
+
+.plan-gif-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin: 15px 0 5px;
+}
+
+.plan-gif {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+
+    animation: gifFloat 3s ease-in-out infinite;
+}
+
+@keyframes gifFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(2deg);
+    }
+
+}
+
+.plan-category {
+    text-align: center;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #D8286A;
+
+    margin: 8px 0;
+}
+
+.plan-title {
+    text-align: center;
+
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+
+    font-size: 28px;
+    line-height: 1;
+
+    margin: 5px 0 14px;
+}
+
+.plan-description {
+    text-align: center;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: #704C59;
+
+    margin-bottom: 18px;
+}
+
+.plan-input {
+    width: 100%;
+    min-height: 110px;
+
+    box-sizing: border-box;
+
+    resize: vertical;
+
+    padding: 15px;
+
+    border: 1px dashed rgba(216, 40, 106, .35);
+    border-radius: 7px;
+
+    background: #FFF8EE;
+
+    color: #704C59;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border .25s ease,
+        box-shadow .25s ease;
+}
+
+.plan-input:focus {
+    border-color: #D8286A;
+
+    box-shadow:
+        0 0 0 4px rgba(216, 40, 106, .08);
+}
+
+.plan-input::placeholder {
+    color: rgba(112, 76, 89, .45);
+}
+
+.plan-counter {
+    text-align: right;
+
+    margin-top: 5px;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 10px;
+
+    color: rgba(112, 76, 89, .5);
+}
+
+
+/* =====================================================
+   SAVE SECTION
+   ===================================================== */
+
+.plans-save-section {
+    text-align: center;
+
+    padding: 100px 25px;
+
+    opacity: 0;
+    transform: translateY(60px);
+
+    transition:
+        opacity .9s ease,
+        transform 1s ease;
+}
+
+.plans-save-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.save-gif {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+
+    animation: gifFloat 3s ease-in-out infinite;
+}
+
+.save-small-title {
+    font-family: "Mungil", sans-serif;
+    font-size: 12px;
+    color: #D8286A;
+}
+
+.plans-save-section h3 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 34px;
+    line-height: .95;
+
+    margin: 12px 0;
+}
+
+.plans-save-section > p {
+    font-family: "Mungil", sans-serif;
+    color: #704C59;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.save-plans-button,
+.reveal-plans-button,
+.pick-plan-button,
+.final-love-button {
+    border: none;
+
+    background: #D8286A;
+    color: white;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    margin-top: 20px;
+
+    box-shadow:
+        0 7px 20px rgba(216, 40, 106, .2);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.save-plans-button:hover,
+.reveal-plans-button:hover,
+.pick-plan-button:hover,
+.final-love-button:hover {
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 12px 25px rgba(216, 40, 106, .25);
+}
+
+.save-plans-button:active,
+.reveal-plans-button:active,
+.pick-plan-button:active,
+.final-love-button:active {
+    transform: scale(.96);
+}
+
+.plans-status {
+    min-height: 20px;
+    font-size: 11px !important;
+    color: #D8286A !important;
+}
+
+
+/* =====================================================
+   MAGICAL TRANSITION
+   ===================================================== */
+
+.plans-transition {
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 80px 25px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    opacity: 0;
+}
+
+.plans-transition.active {
+    display: flex;
+
+    animation: magicalTransition 1.3s ease forwards;
+}
+
+@keyframes magicalTransition {
+
+    0% {
+        opacity: 0;
+        transform: scale(.92);
+        filter: blur(6px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.02);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.transition-sparkles {
+    color: #D8286A;
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    animation: sparkleSpin 3s linear infinite;
+}
+
+@keyframes sparkleSpin {
+
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.transition-gif {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+
+    animation: gifFloat 2.5s ease-in-out infinite;
+}
+
+.plans-transition p {
+    font-family: "Mungil", sans-serif;
+    color: #704C59;
+    font-size: 13px;
+}
+
+.plans-transition h3 {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 36px;
+    line-height: .95;
+}
+
+
+/* =====================================================
+   OUR PLANNER
+   ===================================================== */
+
+.our-planner-section {
+    display: none;
+
+    padding: 80px 20px 50px;
+
+    opacity: 0;
+}
+
+.our-planner-section.active {
+    display: block;
+
+    animation: plannerAppear 1s ease forwards;
+}
+
+@keyframes plannerAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.planner-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.planner-decoration {
+    color: #D8286A;
+    font-size: 15px;
+}
+
+.planner-small-title {
+    font-family: "Mungil", sans-serif;
+    color: #D8286A;
+    font-size: 12px;
+}
+
+.planner-header h3 {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 37px;
+    line-height: .95;
+    margin: 12px 0;
+}
+
+.planner-header > p:last-child {
+    font-family: "Mungil", sans-serif;
+    color: #704C59;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PLAN LIST
+   ===================================================== */
+
+.plans-list {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+}
+
+.planner-card {
+    position: relative;
+
+    background: #FFFDF8;
+
+    border: 1px solid rgba(216, 40, 106, .18);
+
+    padding: 24px 20px 28px;
+
+    box-shadow:
+        0 10px 25px rgba(120, 70, 80, .07);
+
+    opacity: 0;
+
+    transform:
+        translateY(70px)
+        rotate(4deg);
+
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.planner-card.visible {
+    opacity: 1;
+    transform:
+        translateY(0)
+        rotate(var(--card-rotate));
+}
+
+.planner-card:nth-child(even) {
+    --card-rotate: 1.5deg;
+}
+
+.planner-card:nth-child(odd) {
+    --card-rotate: -1.5deg;
+}
+
+.planner-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -10px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-2deg);
+
+    width: 70px;
+    height: 20px;
+
+    background: rgba(216, 40, 106, .12);
+}
+
+.planner-card-label {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(216, 40, 106, .08);
+
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.planner-card-number {
+    float: right;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: rgba(216, 40, 106, .25);
+
+    font-size: 22px;
+}
+
+.planner-card-author {
+    margin-top: 25px;
+
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 11px;
+}
+
+.planner-card-text {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin: 8px 0 0;
+}
+
+
+/* =====================================================
+   MISSION
+   ===================================================== */
+
+.mission-section {
+    margin-top: 110px;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.mission-gif {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+
+    animation: gifFloat 3s ease-in-out infinite;
+}
+
+.mission-small-title {
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 12px;
+}
+
+.mission-section h3 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 36px;
+
+    line-height: .95;
+
+    margin: 12px 0;
+}
+
+.mission-section > p {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.mission-result {
+    display: none;
+
+    margin-top: 35px;
+
+    padding: 35px 20px;
+
+    background: #FFFDF8;
+
+    border: 1.5px solid rgba(216, 40, 106, .25);
+
+    box-shadow:
+        0 15px 35px rgba(120, 70, 80, .1);
+
+    animation: missionPop 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.mission-result.active {
+    display: block;
+}
+
+@keyframes missionPop {
+
+    0% {
+        opacity: 0;
+        transform: scale(.5) rotate(-8deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.06) rotate(2deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+.mission-sparkles {
+    color: #D8286A;
+
+    font-size: 17px;
+
+    animation: sparkleSpin 3s linear infinite;
+}
+
+.mission-label {
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.mission-result h4 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 25px;
+
+    line-height: 1.1;
+
+    margin: 15px 0;
+}
+
+.mission-category {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.mission-ending-gif {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   FINAL ENDING
+   ===================================================== */
+
+.page-seven-ending {
+    margin-top: 100px;
+
+    padding: 80px 25px 40px;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(60px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.page-seven-ending.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ending-sparkles {
+    color: #D8286A;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+.final-ending-gif {
+    width: 140px;
+    height: 140px;
+
+    object-fit: contain;
+
+    animation: gifFloat 3s ease-in-out infinite;
+}
+
+.ending-story {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-top: 25px;
+}
+
+.final-love-button {
+    animation: heartPulse 2s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* =====================================================
+   PAGE 7 NAVIGATION
+   ===================================================== */
+
+.page-seven-navigation {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 50px 20px 90px;
+}
+
+.back-seven-button,
+.next-seven-button {
+    border: 1px solid rgba(216, 40, 106, .35);
+
+    background: transparent;
+
+    color: #D8286A;
+
+    padding: 11px 25px;
+
+    border-radius: 25px;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.next-seven-button {
+    background: #D8286A;
+    color: white;
+}
+
+.back-seven-button:hover,
+.next-seven-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 430px) {
+
+    .page-seven-title {
+        font-size: 31px;
+    }
+
+    .plan-title {
+        font-size: 25px;
+    }
+
+    .planner-header h3 {
+        font-size: 34px;
+    }
+
+}
+
+
+/* =========================================
+   FONT
+   ========================================= */
+
+@font-face {
+    font-family: "StrawberryRuckus";
+    src: url("fonts/StrawberryRuckus.otf") format("opentype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mungil";
+    src: url("fonts/Mungil-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+
+/* =========================================
+   DASAR WEBSITE
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #FFF8EE;
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   PAGE 1 — SECRET
+   ========================================= */
+
+.secret-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.secret-content {
+    width: 100%;
+    max-width: 430px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   EYEBROW
+   ========================================= */
+
+.eyebrow {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   OUR LITTLE STORY
+   ========================================= */
+
+.story-title {
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 35px;
+}
+
+.story-title h1 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 65px;
+    font-weight: normal;
+
+    line-height: 0.85;
+
+    color: #D8286A;
+}
+
+
+/* =========================================
+   PNG DECORATION
+   ========================================= */
+
+.png-1 {
+    position: absolute;
+
+    top: 30px;
+    left: -10px;
+
+    width: 80px;
+    height: auto;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.png-2 {
+    position: absolute;
+
+    top: -35px;
+    right: -58px;
+
+    width: 58px;
+    height: auto;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   INSTRUCTION
+   ========================================= */
+
+.instruction {
+    font-size: 16px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   SECRET CODE BOX
+   ========================================= */
+
+.code-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 300px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================
+   INPUT
+   ========================================= */
+
+#secretCode {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    border: 2px solid #D8286A;
+    border-radius: 12px;
+
+    background: transparent;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 16px;
+
+    color: #D8286A;
+
+    text-align: center;
+
+    outline: none;
+
+    appearance: none;
+}
+
+#secretCode::placeholder {
+    color: #D8286A;
+    opacity: 0.45;
+}
+
+#secretCode:focus {
+    box-shadow:
+        0 0 0 3px rgba(216, 40, 106, 0.12);
+}
+
+
+/* =========================================
+   GIF INPUT
+   ========================================= */
+
+.gif-right {
+    position: absolute;
+
+    right: -30px;
+    top: -28px;
+
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   GENERAL BUTTON RESET
+   ========================================= */
+
+button {
+    -webkit-appearance: none;
+    appearance: none;
+
+    font-family: "Mungil", sans-serif;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   ENTER BUTTON
+   ========================================= */
+
+#enterButton {
+    margin-top: 20px;
+
+    padding: 12px 30px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 30px;
+
+    background: #D8286A;
+    color: #FFF8EE;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+#enterButton:hover {
+    transform: scale(1.05);
+    opacity: 0.92;
+}
+
+#enterButton:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+   ========================================= */
+
+#errorMessage {
+    color: #D8286A;
+
+    opacity: 0;
+    visibility: hidden;
+
+    min-height: 18px;
+
+    margin-top: 10px;
+
+    transition: opacity 0.5s ease;
+}
+
+#errorMessage.show {
+    opacity: 1;
+    visibility: visible;
+
+    animation:
+        errorMessageFade 3.5s ease forwards;
+}
+
+@keyframes errorMessageFade {
+
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   HINT
+   ========================================= */
+
+.hint {
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+   ========================================= */
+
+.floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+.floating-heart {
+    position: absolute;
+
+    bottom: -30px;
+
+    width: 20px;
+    height: 20px;
+
+    background: #D8286A;
+
+    border-radius: 50%;
+
+    transform: rotate(-45deg);
+
+    opacity: 0;
+
+    animation:
+        heartUp 6s linear forwards;
+}
+
+.floating-heart::before,
+.floating-heart::after {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    background: #D8286A;
+
+    border-radius: 50%;
+}
+
+.floating-heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.floating-heart::after {
+    top: 0;
+    left: 10px;
+}
+
+@keyframes heartUp {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(-45deg)
+            scale(0.5);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.25;
+    }
+
+    70% {
+        opacity: 0.15;
+    }
+
+    100% {
+        transform:
+            translate(
+                var(--move-x),
+                -110vh
+            )
+            rotate(-45deg)
+            scale(1);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   WRONG CODE POPUP
+   ========================================= */
+
+.wrong-popup {
+    position: fixed;
+
+    left: 50%;
+    bottom: 40%;
+
+    transform:
+        translateX(-50%)
+        scale(0.8);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+.wrong-popup img {
+    width: 200px;
+    height: auto;
+
+    display: block;
+}
+
+.wrong-popup.show {
+    opacity: 1;
+    visibility: visible;
+
+    animation:
+        wrongPopup 3.5s ease forwards;
+}
+
+@keyframes wrongPopup {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.8);
+    }
+
+    15% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    75% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.95);
+    }
+}
+
+
+/* =========================================
+   PAGE 2 — ANNIVERSARY
+   ========================================= */
+
+.anniversary-page {
+    min-height: 100vh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px 25px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.anniversary-content {
+    width: 100%;
+    max-width: 380px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   GIFT GIF
+   ========================================= */
+
+.gift-gif {
+    width: 150px;
+    height: 150px;
+
+    object-fit: contain;
+
+    margin: 15px 0;
+
+    /* GIF tetap bergerak */
+    animation: none;
+}
+
+
+/* =========================================
+   ANNIVERSARY MESSAGE
+   ========================================= */
+
+.anniversary-message {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #D8286A;
+
+    margin: 5px 0 25px;
+
+    opacity: 0;
+
+    animation:
+        messageAppear 1s ease forwards;
+
+    animation-delay: 0.8s;
+}
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   NEXT BUTTON
+   ========================================= */
+
+.next-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 85px;
+    min-height: 40px;
+
+    padding: 11px 28px;
+
+    border: 0;
+    border-width: 0;
+    border-style: none;
+
+    outline: none;
+
+    border-radius: 30px;
+
+    background-color: #D8286A !important;
+    color: #FFF8EE !important;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    animation:
+        nextAppear 1s ease forwards;
+
+    animation-delay: 2.5s;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+@keyframes nextAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.next-button:hover {
+    background-color: #D8286A !important;
+
+    transform: scale(1.05);
+
+    opacity: 0.92;
+}
+
+.next-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   PAGE 3 — MEMORY
+   ========================================= */
+
+.story-page {
+    min-height: 100vh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px 22px;
+
+    position: relative;
+    z-index: 1;
+
+    overflow-y: auto;
+}
+
+.memory-content {
+    width: 100%;
+    max-width: 420px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   MEMORY CARD
+   ========================================= */
+
+.memory-card {
+    width: 100%;
+
+    background: #FFFFFF;
+
+    border: 1px solid #F1D8E2;
+
+    border-radius: 24px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(216, 40, 106, 0.08);
+
+    overflow: hidden;
+
+    animation:
+        memoryAppear 0.8s ease forwards;
+}
+
+@keyframes memoryAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.97);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   FOTO — HORIZONTAL 4:3
+   ========================================= */
+
+.memory-photo {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #FFF8EE;
+
+    border: 7px solid #F6B6CC;
+
+    border-radius: 18px;
+
+    margin: 0 auto;
+
+    box-shadow:
+        0 4px 12px
+        rgba(216, 40, 106, 0.12);
+}
+
+
+/* =========================================
+   MEMORY DATE
+   ========================================= */
+
+.memory-date {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #D8286A;
+
+    margin: 20px 0 15px;
+}
+
+
+/* =========================================
+   MEMORY TEXT
+   ========================================= */
+
+.memory-text {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #6F4B58;
+
+    margin: 0 5px 5px;
+}
+
+
+/* =========================================
+   PAGE 3 NAVIGATION
+   BACK + NEXT MENYAMPING
+   ========================================= */
+
+.memory-navigation {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.back-button {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 85px;
+    min-height: 40px;
+
+    margin-top: 0;
+
+    padding: 11px 28px;
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+
+    outline: none;
+
+    border-radius: 30px;
+
+    background: #D8286A !important;
+    background-color: #D8286A !important;
+
+    color: #FFF8EE !important;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    opacity: 1;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.back-button:hover {
+    background: #D8286A !important;
+    background-color: #D8286A !important;
+
+    color: #FFF8EE !important;
+
+    transform: scale(1.05);
+
+    opacity: 0.92;
+}
+
+.back-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   PAGE 3 NEXT BUTTON
+   ========================================= */
+
+.next-memory-button {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 85px;
+    min-height: 40px;
+
+    margin-top: 0;
+
+    padding: 11px 28px;
+
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+
+    outline: none;
+
+    border-radius: 30px;
+
+    background: #D8286A !important;
+    background-color: #D8286A !important;
+
+    color: #FFF8EE !important;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.next-memory-button:hover {
+    background: #D8286A !important;
+    background-color: #D8286A !important;
+
+    color: #FFF8EE !important;
+
+    transform: scale(1.05);
+
+    opacity: 0.92;
+}
+
+.next-memory-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   BUTTON FOCUS
+   ========================================= */
+
+.next-button:focus,
+.back-button:focus,
+.next-memory-button:focus {
+    outline: none;
+}
+
+
+/* =========================================
+   PAGE 4 — MUSIC + MEMORIES
+   ========================================= */
+
+.page-four {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    text-align: center;
+
+    padding: 50px 20px 80px;
+
+    position: relative;
+    z-index: 1;
+
+    overflow-x: hidden;
+}
+
+.page-four-content {
+    width: 100%;
+    max-width: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   MUSIC INTRO
+   ========================================= */
+
+.music-intro {
+    min-height: 85vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.music-text {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 17px;
+
+    color: #D8286A;
+
+    margin-bottom: 22px;
+}
+
+.music-control {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+}
+
+.music-play-button {
+    min-width: 85px;
+    min-height: 40px;
+
+    padding: 11px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #D8286A;
+
+    color: #FFF8EE;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.music-play-button:hover {
+    transform: scale(1.05);
+
+    opacity: 0.9;
+}
+
+.music-play-button:active {
+    transform: scale(0.97);
+}
+
+.music-gif {
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MEMORIES CONTAINER
+   ========================================= */
+
+.memories-container {
+    width: 100%;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   POLAROID
+   ========================================= */
+
+.memory-polaroid {
+    position: relative;
+
+    width: 100%;
+    max-width: 350px;
+
+    background: #FFFFFF;
+
+    padding: 15px 15px 22px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(216, 40, 106, 0.10);
+
+    opacity: 0;
+
+    transform:
+        translateY(60px)
+        scale(0.97);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+
+    margin-bottom: 38vh;
+}
+
+.memory-polaroid.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================
+   POLAROID PHOTO — 4:3
+   ========================================= */
+
+.polaroid-photo {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    background: #FFF8EE;
+}
+
+.polaroid-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   CAPTION
+   ========================================= */
+
+.polaroid-caption {
+    font-family: "Mungil", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #6F4B58;
+
+    margin-top: 16px;
+
+    min-height: 24px;
+}
+
+
+/* =========================================
+   POLAROID TILT
+   ========================================= */
+
+.memory-one {
+    transform:
+        rotate(-2deg)
+        translateY(60px)
+        scale(0.97);
+}
+
+.memory-two {
+    transform:
+        rotate(2deg)
+        translateY(60px)
+        scale(0.97);
+}
+
+.memory-three {
+    transform:
+        rotate(-1.5deg)
+        translateY(60px)
+        scale(0.97);
+}
+
+.memory-four {
+    transform:
+        rotate(2.5deg)
+        translateY(60px)
+        scale(0.97);
+}
+
+.memory-one.visible {
+    transform:
+        rotate(-2deg)
+        translateY(0)
+        scale(1);
+}
+
+.memory-two.visible {
+    transform:
+        rotate(2deg)
+        translateY(0)
+        scale(1);
+}
+
+.memory-three.visible {
+    transform:
+        rotate(-1.5deg)
+        translateY(0)
+        scale(1);
+}
+
+.memory-four.visible {
+    transform:
+        rotate(2.5deg)
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================
+   GIF DECORATION
+   ========================================= */
+
+.polaroid-gif {
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+.gif-one {
+    top: -42px;
+    right: -25px;
+}
+
+.gif-two {
+    bottom: -35px;
+    left: -30px;
+}
+
+.gif-three {
+    top: -38px;
+    left: -28px;
+}
+
+.gif-four {
+    bottom: -38px;
+    right: -28px;
+}
+
+
+/* =========================================
+   PAGE 4 FINAL NAVIGATION
+   ========================================= */
+
+.memory-four-navigation {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: -15vh;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.memory-four-navigation.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.back-four-button,
+.next-four-button {
+    min-width: 85px;
+    min-height: 40px;
+
+    padding: 11px 27px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #D8286A;
+
+    color: #FFF8EE;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.back-four-button:hover,
+.next-four-button:hover {
+    transform: scale(1.05);
+
+    opacity: 0.92;
+}
+
+.back-four-button:active,
+.next-four-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   PAGE 4 BUTTON FOCUS
+   ========================================= */
+
+.music-play-button:focus,
+.back-four-button:focus,
+.next-four-button:focus {
+    outline: none;
+}
+
+
+/* =========================================
+   HP
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    .secret-page {
+        padding: 25px 18px;
+    }
+
+    .story-title h1 {
+        font-size: 55px;
+    }
+
+    .png-1 {
+        width: 45px;
+
+        top: 48px;
+        left: 75px;
+    }
+
+    .png-2 {
+        width: 42px;
+
+        top: 48px;
+        right: 25px;
+    }
+
+    .code-box {
+        max-width: 270px;
+    }
+
+    .gif-right {
+        width: 70px;
+        height: 70px;
+
+        right: -50px;
+    }
+
+    .anniversary-page {
+        padding: 25px 18px;
+    }
+
+    .gift-gif {
+        width: 135px;
+        height: 135px;
+    }
+
+    .anniversary-message {
+        font-size: 15px;
+    }
+
+    .story-page {
+        padding: 25px 18px;
+    }
+
+    .memory-content {
+        max-width: 100%;
+    }
+
+    .memory-card {
+        padding: 14px;
+
+        border-radius: 20px;
+    }
+
+    .memory-photo {
+        width: 100%;
+
+        aspect-ratio: 4 / 3;
+
+        border-width: 6px;
+
+        border-radius: 14px;
+
+        object-fit: cover;
+    }
+
+    .memory-date {
+        font-size: 11px;
+
+        letter-spacing: 1.7px;
+
+        margin-top: 17px;
+        margin-bottom: 13px;
+    }
+
+    .memory-text {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .next-button,
+    .back-button,
+    .next-memory-button {
+        min-width: 85px;
+        min-height: 40px;
+
+        padding: 11px 27px;
+
+        font-size: 13px;
+    }
+
+
+    /* PAGE 4 */
+
+    .page-four {
+        padding: 40px 18px 70px;
+    }
+
+    .music-text {
+        font-size: 15px;
+    }
+
+    .music-gif {
+        width: 65px;
+        height: 65px;
+    }
+
+    .memory-polaroid {
+        max-width: 100%;
+
+        padding: 12px 12px 20px;
+
+        margin-bottom: 38vh;
+    }
+
+    .polaroid-caption {
+        font-size: 14px;
+    }
+
+    .polaroid-gif {
+        width: 62px;
+        height: 62px;
+    }
+
+    .gif-one {
+        top: -35px;
+        right: -20px;
+    }
+
+    .gif-two {
+        bottom: -30px;
+        left: -22px;
+    }
+
+    .gif-three {
+        top: -32px;
+        left: -22px;
+    }
+
+    .gif-four {
+        bottom: -32px;
+        right: -22px;
+    }
+
+}
+
+
+/* =========================================
+   HP SANGAT KECIL
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .story-title h1 {
+        font-size: 48px;
+    }
+
+    .png-1 {
+        width: 40px;
+
+        left: 65px;
+        top: 42px;
+    }
+
+    .png-2 {
+        width: 38px;
+
+        right: 20px;
+        top: 43px;
+    }
+
+    .gif-right {
+        width: 62px;
+        height: 62px;
+
+        right: -43px;
+    }
+
+    .memory-card {
+        padding: 12px;
+    }
+
+    .memory-photo {
+        aspect-ratio: 4 / 3;
+
+        border-width: 5px;
+    }
+
+    .memory-text {
+        font-size: 13px;
+    }
+
+    .memory-polaroid {
+        padding: 10px 10px 18px;
+    }
+
+    .polaroid-caption {
+        font-size: 13px;
+    }
+
+    .polaroid-gif {
+        width: 55px;
+        height: 55px;
+    }
+
+}
+
+/* =====================================================
+   PAGE 5 — LITTLE THINGS ABOUT US
+   ===================================================== */
+
+.page-five {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    background: #FFF8EE;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.page-five-content {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 55px 22px 80px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE 5 HEADER
+   ===================================================== */
+
+.page-five-header {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.top-decoration {
+    color: #D8286A;
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.page-five-small-title {
+    font-size: 14px;
+    margin: 0 0 5px;
+    color: #D8286A;
+}
+
+.page-five-title {
+    font-family: "StrawberryRuckus", cursive;
+    font-size: 54px;
+    line-height: 0.9;
+    color: #D8286A;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.page-five-subtitle {
+    font-family: "Mungil", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #D8286A;
+    margin: 18px auto 0;
+    max-width: 280px;
+}
+
+
+/* =====================================================
+   GENERAL MEMORY
+   ===================================================== */
+
+.page-five-memory {
+    position: relative;
+    min-height: 420px;
+    margin-bottom: 70px;
+
+    opacity: 0;
+    transform: translateY(60px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.page-five-memory.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   GIF
+   ===================================================== */
+
+.gif-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-five-gif {
+    width: 180px;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =====================================================
+   CAPTION
+   ===================================================== */
+
+.page-five-caption {
+    position: absolute;
+
+    background: #ffffff;
+    border: 1.5px solid rgba(216, 40, 106, 0.35);
+
+    padding: 18px 20px;
+
+    box-shadow:
+        4px 5px 0 rgba(216, 40, 106, 0.08);
+
+    max-width: 220px;
+
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+.page-five-caption p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   DECORATIONS
+   ===================================================== */
+
+.floating-decoration,
+.tiny-decoration {
+    position: absolute;
+    color: #D8286A;
+    pointer-events: none;
+}
+
+.floating-decoration {
+    font-size: 26px;
+}
+
+.tiny-decoration {
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   MEMORY 1
+   GIF CENTER
+   CAPTION BELOW
+   ===================================================== */
+
+.memory-five-one {
+    min-height: 430px;
+}
+
+.gif-wrapper-one {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+}
+
+.memory-five-one .page-five-gif {
+    width: 210px;
+    aspect-ratio: 4 / 3; }
+
+.caption-one {
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+}
+
+.decoration-one {
+    top: 20px;
+    right: 45px;
+    transform: rotate(15deg);
+}
+
+.decoration-one-bottom {
+    top: 385px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* =====================================================
+   MEMORY 2
+   GIF RIGHT
+   CAPTION LEFT
+   ===================================================== */
+
+.memory-five-two {
+    min-height: 430px;
+}
+
+.gif-wrapper-two {
+    top: 35px;
+    right: 5px;
+    transform: rotate(4deg);
+}
+
+.memory-five-two .page-five-gif {
+    width: 185px;
+    height: 185px;
+}
+
+.caption-two {
+    top: 95px;
+    left: 0;
+    transform: rotate(-3deg);
+}
+
+.decoration-two {
+    top: 15px;
+    left: 20px;
+    font-size: 30px;
+    transform: rotate(-10deg);
+}
+
+.decoration-two-bottom {
+    right: 40px;
+    bottom: 35px;
+}
+
+
+/* =====================================================
+   MEMORY 3
+   GIF LEFT / CENTER
+   CAPTION BELOW
+   ===================================================== */
+
+.memory-five-three {
+    min-height: 440px;
+}
+
+.gif-wrapper-three {
+    top: 5px;
+    left: 35px;
+    transform: rotate(-5deg);
+}
+
+.memory-five-three .page-five-gif {
+    width: 200px;
+    aspect-ratio: 4 / 3; }
+
+.caption-three {
+    top: 245px;
+    right: 10px;
+    transform: rotate(3deg);
+}
+
+.decoration-three-top {
+    position: absolute;
+    top: 0;
+    right: 35px;
+    font-size: 18px;
+}
+
+.decoration-three {
+    top: 145px;
+    right: 35px;
+    font-size: 32px;
+}
+
+
+/* =====================================================
+   MEMORY 4
+   CAPTION LEFT
+   GIF RIGHT
+   ===================================================== */
+
+.memory-five-four {
+    min-height: 450px;
+}
+
+.caption-four {
+    top: 75px;
+    left: 0;
+    transform: rotate(-2deg);
+}
+
+.gif-wrapper-four {
+    top: 10px;
+    right: 0;
+    transform: rotate(5deg);
+}
+
+.memory-five-four .page-five-gif {
+    width: 195px;
+    aspect-ratio: 4 / 3; }
+
+.decoration-four {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 17px;
+}
+
+.decoration-four-bottom {
+    bottom: 25px;
+    right: 50px;
+}
+
+
+/* =====================================================
+   ENDING
+   ===================================================== */
+
+.page-five-ending {
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    padding-top: 20px;
+}
+
+.page-five-ending.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ending-decoration {
+    color: #D8286A;
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.ending-text {
+    font-family: "Mungil", sans-serif;
+    color: #D8286A;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 auto 30px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.page-five-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.back-five-button,
+.next-five-button {
+    border: none;
+    background: #D8286A;
+    color: #FFF8EE;
+
+    font-family: "Mungil", sans-serif;
+
+    padding: 11px 22px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.back-five-button:hover,
+.next-five-button:hover {
+    transform: translateY(-2px);
+}
+
+.back-five-button:active,
+.next-five-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .page-five-content {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .page-five-title {
+        font-size: 48px;
+    }
+
+    .page-five-header {
+        margin-bottom: 80px;
+    }
+
+    .page-five-memory {
+        min-height: 390px;
+    }
+
+    .page-five-gif {
+        max-width: 100%;
+    }
+
+    .memory-five-one .page-five-gif {
+        width: 190px;
+        aspect-ratio: 4 / 3; }
+
+    .caption-one {
+        top: 225px;
+    }
+
+    .memory-five-two .page-five-gif {
+        width: 165px;
+        aspect-ratio: 4 / 3; }
+
+    .memory-five-three .page-five-gif {
+        width: 175px;
+        aspect-ratio: 4 / 3; }
+
+    .memory-five-four .page-five-gif {
+        width: 175px;
+        aspect-ratio: 4 / 3; }
+
+    .page-five-caption {
+        font-size: 13px;
+        max-width: 190px;
+        padding: 15px 16px;
+    }
+
+    .caption-two {
+        left: -5px;
+    }
+
+    .caption-four {
+        left: -5px;
+    }
+
+    .decoration-one {
+        right: 20px;
+    }
+
+    .decoration-two {
+        left: 5px;
+    }
+
+    .decoration-three {
+        right: 15px;
+    }
+
+    .decoration-four-bottom {
+        right: 20px;
+    }
+}
+
+/* =====================================================
+   PAGE 6 — OUR WISHES
+   ===================================================== */
+
+.page-six {
+    display: none;
+    min-height: 100vh;
+    background: #FFF8EE;
+    padding: 70px 20px 100px;
+    box-sizing: border-box;
+}
+
+.page-six-content {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.page-six-header {
+    margin-bottom: 35px;
+}
+
+.page-six-decoration {
+    color: #D8286A;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.page-six-small-title {
+    font-family: "Mungil", sans-serif;
+    color: #D8286A;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.page-six-title {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 48px;
+    line-height: .9;
+    margin: 0 0 18px;
+}
+
+.page-six-subtitle {
+    font-family: "Mungil", sans-serif;
+    color: #5e4b50;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FIRST WISH
+   ========================= */
+
+.first-wish-section {
+    margin-top: 30px;
+}
+
+.first-wish-title {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.first-wish-description {
+    font-family: "Mungil", sans-serif;
+    color: #6c565d;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.wish-input {
+    width: 100%;
+    min-height: 135px;
+    box-sizing: border-box;
+
+    border: 1.5px solid #e7a6bb;
+    border-radius: 18px;
+
+    background: #fffdf9;
+
+    padding: 17px;
+
+    resize: vertical;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 15px;
+    color: #4f3d43;
+
+    outline: none;
+
+    box-shadow: 0 8px 20px rgba(216, 40, 106, .07);
+
+    transition: .25s ease;
+}
+
+.wish-input:focus {
+    border-color: #D8286A;
+    box-shadow: 0 8px 25px rgba(216, 40, 106, .14);
+}
+
+.wish-input::placeholder {
+    color: #c6aeb6;
+}
+
+.wish-counter {
+    text-align: right;
+    color: #b796a0;
+    font-family: "Mungil", sans-serif;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.send-wish-button,
+.save-all-wishes-button,
+.unlock-secret-button,
+.open-our-wishes-button {
+    border: none;
+    border-radius: 999px;
+
+    background: #D8286A;
+    color: white;
+
+    padding: 13px 25px;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 18px rgba(216, 40, 106, .18);
+
+    transition: .25s ease;
+}
+
+.send-wish-button:hover,
+.save-all-wishes-button:hover,
+.unlock-secret-button:hover,
+.open-our-wishes-button:hover {
+    transform: translateY(-2px);
+}
+
+.send-wish-button {
+    margin-top: 18px;
+}
+
+.wish-status {
+    min-height: 20px;
+    margin-top: 12px;
+
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+}
+
+
+/* =========================
+   POPUP
+   ========================= */
+
+.wish-popup-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(55, 32, 40, .38);
+
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+.wish-popup-overlay.active {
+    display: flex;
+    animation: popupOverlayIn .35s ease;
+}
+
+@keyframes popupOverlayIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.wish-popup {
+    width: 100%;
+    max-width: 350px;
+
+    background: #FFF8EE;
+
+    border: 2px solid #f0c4d2;
+
+    border-radius: 28px;
+
+    padding: 32px 24px 27px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    box-shadow: 0 20px 60px rgba(70, 30, 45, .2);
+
+    animation: popupIn .4s ease;
+}
+
+@keyframes popupIn {
+    from {
+        transform: scale(.88) translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.popup-close {
+    position: absolute;
+
+    right: 14px;
+    top: 10px;
+
+    border: none;
+    background: none;
+
+    color: #d8a3b4;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.popup-small-title {
+    color: #D8286A;
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.popup-title {
+    color: #D8286A;
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 32px;
+    line-height: 1;
+
+    margin: 0 0 13px;
+}
+
+.popup-text {
+    color: #5f4c52;
+    font-family: "Mungil", sans-serif;
+
+    font-size: 14px;
+    line-height: 1.65;
+
+    white-space: pre-line;
+}
+
+.popup-gif {
+    width: 120px;
+    max-height: 120px;
+
+    object-fit: contain;
+
+    margin: 12px auto;
+
+    display: block;
+}
+
+.popup-next-button {
+    border: none;
+    background: #D8286A;
+    color: white;
+
+    border-radius: 999px;
+
+    padding: 11px 25px;
+
+    font-family: "Mungil", sans-serif;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.popup-next-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   EXTRA WISHES
+   ========================= */
+
+.extra-wishes-section {
+    display: none;
+
+    margin-top: 50px;
+
+    animation: sectionFade .6s ease;
+}
+
+.extra-wishes-section.active {
+    display: block;
+}
+
+@keyframes sectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.extra-wishes-header {
+    margin-bottom: 30px;
+}
+
+.extra-wishes-decoration {
+    color: #D8286A;
+}
+
+.extra-wishes-small-title {
+    color: #D8286A;
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+}
+
+.extra-wishes-header h3 {
+    color: #D8286A;
+    font-family: "StrawberryRuckus", sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    margin: 8px 0 13px;
+}
+
+.extra-wishes-header p {
+    color: #6c565d;
+    font-family: "Mungil", sans-serif;
+    line-height: 1.6;
+}
+
+.extra-wish-box {
+    background: #fffdf9;
+
+    border: 1.5px solid #edc2cf;
+
+    border-radius: 24px;
+
+    padding: 23px 18px;
+
+    margin-bottom: 22px;
+
+    text-align: left;
+
+    box-shadow: 0 8px 22px rgba(216, 40, 106, .06);
+}
+
+.extra-wish-number {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 12px;
+}
+
+.extra-wish-box h4 {
+    color: #D8286A;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 27px;
+
+    margin: 5px 0;
+}
+
+.extra-wish-box p {
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 13px;
+}
+
+.save-all-wishes-button {
+    margin-top: 8px;
+}
+
+
+/* =========================
+   UNLOCK SECTION
+   ========================= */
+
+.unlock-section {
+    display: none;
+
+    margin-top: 55px;
+
+    padding: 30px 20px;
+
+    border-top: 1px dashed #e2a8ba;
+    border-bottom: 1px dashed #e2a8ba;
+
+    animation: sectionFade .7s ease;
+}
+
+.unlock-section.active {
+    display: block;
+}
+
+.unlock-decoration {
+    color: #D8286A;
+}
+
+.unlock-small-title {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+}
+
+.unlock-section h3 {
+    color: #D8286A;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 38px;
+    line-height: .95;
+
+    margin: 10px 0 15px;
+}
+
+.unlock-section > p {
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    line-height: 1.6;
+}
+
+.unlock-secret-button {
+    margin-top: 17px;
+}
+
+
+/* =========================
+   CODE UNLOCK
+   ========================= */
+
+.code-unlock-section {
+    display: none;
+
+    margin-top: 50px;
+
+    animation: sectionFade .7s ease;
+}
+
+.code-unlock-section.active {
+    display: block;
+}
+
+.code-decoration {
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.code-small-title {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+}
+
+.code-unlock-section h3 {
+    color: #D8286A;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 40px;
+    line-height: .95;
+
+    margin: 10px 0 15px;
+}
+
+.code-unlock-section > p {
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    line-height: 1.6;
+}
+
+.our-wish-code {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 20px;
+
+    border: 1.5px solid #e3a9bb;
+    border-radius: 999px;
+
+    background: #fffdf9;
+
+    padding: 14px 18px;
+
+    text-align: center;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 16px;
+
+    outline: none;
+}
+
+.our-wish-code:focus {
+    border-color: #D8286A;
+}
+
+.open-our-wishes-button {
+    margin-top: 13px;
+}
+
+.code-error {
+    color: #D8286A !important;
+
+    font-size: 13px;
+
+    min-height: 20px;
+}
+
+
+/* =========================
+   OUR WISHES
+   ========================= */
+
+.our-wishes-section {
+    display: none;
+
+    margin-top: 55px;
+
+    animation: sectionFade .8s ease;
+}
+
+.our-wishes-section.active {
+    display: block;
+}
+
+.our-wishes-header {
+    margin-bottom: 30px;
+}
+
+.our-wishes-decoration {
+    color: #D8286A;
+}
+
+.our-wishes-small-title {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+}
+
+.our-wishes-header h3 {
+    color: #D8286A;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 50px;
+
+    line-height: .85;
+
+    margin: 9px 0 15px;
+}
+
+.our-wishes-header > p:last-child {
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   WISH CARDS
+   ========================= */
+
+.our-wish-card {
+    position: relative;
+
+    background: #fffdf9;
+
+    border: 1.5px solid #e8bdca;
+
+    border-radius: 22px;
+
+    padding: 25px 20px;
+
+    margin-bottom: 24px;
+
+    box-shadow: 0 9px 25px rgba(216, 40, 106, .07);
+
+    text-align: left;
+
+    opacity: 0;
+    transform: translateY(25px) rotate(-1deg);
+
+    animation: wishCardReveal .65s ease forwards;
+}
+
+.our-wish-card:nth-child(even) {
+    transform: translateY(25px) rotate(1deg);
+}
+
+@keyframes wishCardReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-1deg);
+    }
+}
+
+.our-wish-card:nth-child(even) {
+    animation-name: wishCardRevealEven;
+}
+
+@keyframes wishCardRevealEven {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(1deg);
+    }
+}
+
+.our-wish-label {
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.our-wish-number {
+    position: absolute;
+
+    right: 18px;
+    top: 16px;
+
+    color: #d9b3bf;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 12px;
+}
+
+.our-wish-text {
+    color: #56454b;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+
+    margin: 0;
+}
+
+.our-wishes-ending {
+    margin-top: 45px;
+
+    color: #6c565d;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.ending-love {
+    color: #D8286A;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.page-six-ending {
+    display: none;
+
+    margin-top: 55px;
+
+    animation: sectionFade .7s ease;
+}
+
+.page-six-ending.active {
+    display: block;
+}
+
+.page-six-navigation {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.back-six-button,
+.next-six-button {
+    border: none;
+
+    border-radius: 999px;
+
+    padding: 11px 24px;
+
+    font-family: "Mungil", sans-serif;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.back-six-button {
+    background: #f3dce4;
+    color: #9b6174;
+}
+
+.next-six-button {
+    background: #D8286A;
+    color: white;
+}
+
+.back-six-button:hover,
+.next-six-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .page-six {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .page-six-title {
+        font-size: 42px;
+    }
+
+    .our-wishes-header h3 {
+        font-size: 44px;
+    }
+
+}
+
+/* =====================================================
+   PAGE 7 — OUR LITTLE PLANS
+   ===================================================== */
+
+.page-seven {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    background: #FFF8EE;
+    overflow: hidden;
+}
+
+.page-seven-content {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/* =====================================================
+   MAGICAL OPENING
+   ===================================================== */
+
+.page-seven-opening {
+    min-height: 100vh;
+    padding: 70px 25px 50px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.page-seven-sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.page-seven-sparkles span {
+    position: absolute;
+    color: #D8286A;
+    opacity: 0;
+    animation: magicalSparkle 4s infinite ease-in-out;
+}
+
+.page-seven-sparkles span:nth-child(1) {
+    top: 15%;
+    left: 18%;
+    font-size: 18px;
+}
+
+.page-seven-sparkles span:nth-child(2) {
+    top: 24%;
+    right: 15%;
+    font-size: 13px;
+    animation-delay: .5s;
+}
+
+.page-seven-sparkles span:nth-child(3) {
+    top: 40%;
+    left: 10%;
+    font-size: 22px;
+    animation-delay: 1s;
+}
+
+.page-seven-sparkles span:nth-child(4) {
+    top: 47%;
+    right: 9%;
+    font-size: 15px;
+    animation-delay: 1.4s;
+}
+
+.page-seven-sparkles span:nth-child(5) {
+    bottom: 25%;
+    left: 17%;
+    font-size: 12px;
+    animation-delay: 1.8s;
+}
+
+.page-seven-sparkles span:nth-child(6) {
+    bottom: 20%;
+    right: 19%;
+    font-size: 20px;
+    animation-delay: 2.2s;
+}
+
+.page-seven-sparkles span:nth-child(7) {
+    bottom: 12%;
+    left: 48%;
+    font-size: 17px;
+    animation-delay: 2.6s;
+}
+
+@keyframes magicalSparkle {
+
+    0% {
+        opacity: 0;
+        transform: scale(.4) rotate(-20deg);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+
+    60% {
+        opacity: .7;
+        transform: scale(1.15) rotate(10deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.5) rotate(25deg);
+    }
+
+}
+
+.page-seven-opening-gif {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    margin-bottom: 15px;
+
+    animation:
+        openingFloat 3s ease-in-out infinite,
+        openingAppear 1s ease forwards;
+}
+
+@keyframes openingFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+
+}
+
+@keyframes openingAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.page-seven-small-title {
+    font-family: "Mungil", sans-serif;
+    font-size: 14px;
+    color: #D8286A;
+    margin: 0 0 12px;
+}
+
+.page-seven-title {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 34px;
+    line-height: .95;
+    letter-spacing: 1px;
+    margin: 0;
+
+    animation: titleMagical 1.2s ease forwards;
+}
+
+@keyframes titleMagical {
+
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(.94);
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+
+}
+
+.page-seven-subtitle {
+    font-family: "Mungil", sans-serif;
+    color: #704C59;
+    font-size: 13px;
+    line-height: 1.65;
+    margin: 22px 0 0;
+}
+
+.page-seven-scroll-hint {
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    color: #D8286A;
+    font-family: "Mungil", sans-serif;
+    font-size: 11px;
+
+    animation: scrollHint 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+    font-size: 18px;
+}
+
+@keyframes scrollHint {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: .55;
+    }
+
+    50% {
+        transform: translateY(7px);
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   PLAN CARDS
+   ===================================================== */
+
+.plan-card {
+    width: calc(100% - 42px);
+    margin: 70px auto;
+
+    padding: 25px 22px 22px;
+
+    box-sizing: border-box;
+
+    background: #FFFDF8;
+
+    border: 1.5px solid rgba(216, 40, 106, .25);
+
+    border-radius: 4px;
+
+    position: relative;
+
+    box-shadow:
+        0 12px 30px rgba(120, 70, 80, .08);
+
+    opacity: 0;
+    transform: translateY(80px) rotate(2deg);
+
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.plan-card.visible {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+}
+
+.plan-card-one.visible {
+    transform: translateY(0) rotate(-1.5deg);
+}
+
+.plan-card-two.visible {
+    transform: translateY(0) rotate(1.2deg);
+}
+
+.plan-card-three.visible {
+    transform: translateY(0) rotate(-1deg);
+}
+
+.plan-card-four.visible {
+    transform: translateY(0) rotate(1.5deg);
+}
+
+.plan-card-five.visible {
+    transform: translateY(0) rotate(-1.3deg);
+}
+
+.plan-tape {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-3deg);
+
+    width: 65px;
+    height: 27px;
+
+    background: rgba(216, 40, 106, .15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+}
+
+.plan-number {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    font-family: "StrawberryRuckus", sans-serif;
+    font-size: 24px;
+    color: rgba(216, 40, 106, .3);
+}
+
+.plan-gif-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin: 15px 0 5px;
+}
+
+.plan-gif {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+
+    animation: gifFloat 3s ease-in-out infinite;
+}
+
+@keyframes gifFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(2deg);
+    }
+
+}
+
+.plan-category {
+    text-align: center;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #D8286A;
+
+    margin: 8px 0;
+}
+
+.plan-title {
+    text-align: center;
+
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+
+    font-size: 28px;
+    line-height: 1;
+
+    margin: 5px 0 14px;
+}
+
+.plan-description {
+    text-align: center;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: #704C59;
+
+    margin-bottom: 18px;
+}
+
+.plan-input {
+    width: 100%;
+    min-height: 110px;
+
+    box-sizing: border-box;
+
+    resize: vertical;
+
+    padding: 15px;
+
+    border: 1px dashed rgba(216, 40, 106, .35);
+    border-radius: 7px;
+
+    background: #FFF8EE;
+
+    color: #704C59;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border .25s ease,
+        box-shadow .25s ease;
+}
+
+.plan-input:focus {
+    border-color: #D8286A;
+
+    box-shadow:
+        0 0 0 4px rgba(216, 40, 106, .08);
+}
+
+.plan-input::placeholder {
+    color: rgba(112, 76, 89, .45);
+}
+
+.plan-counter {
+    text-align: right;
+
+    margin-top: 5px;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 10px;
+
+    color: rgba(112, 76, 89, .5);
+}
+
+
+/* =====================================================
+   SAVE SECTION
+   ===================================================== */
+
+.plans-save-section {
+    text-align: center;
+
+    padding: 100px 25px;
+
+    opacity: 0;
+    transform: translateY(60px);
+
+    transition:
+        opacity .9s ease,
+        transform 1s ease;
+}
+
+.plans-save-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.save-gif {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+
+    animation: gifFloat 3s ease-in-out infinite;
+}
+
+.save-small-title {
+    font-family: "Mungil", sans-serif;
+    font-size: 12px;
+    color: #D8286A;
+}
+
+.plans-save-section h3 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 34px;
+    line-height: .95;
+
+    margin: 12px 0;
+}
+
+.plans-save-section > p {
+    font-family: "Mungil", sans-serif;
+    color: #704C59;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.save-plans-button,
+.reveal-plans-button,
+.pick-plan-button,
+.final-love-button {
+    border: none;
+
+    background: #D8286A;
+    color: white;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    margin-top: 20px;
+
+    box-shadow:
+        0 7px 20px rgba(216, 40, 106, .2);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.save-plans-button:hover,
+.reveal-plans-button:hover,
+.pick-plan-button:hover,
+.final-love-button:hover {
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 12px 25px rgba(216, 40, 106, .25);
+}
+
+.save-plans-button:active,
+.reveal-plans-button:active,
+.pick-plan-button:active,
+.final-love-button:active {
+    transform: scale(.96);
+}
+
+.plans-status {
+    min-height: 20px;
+    font-size: 11px !important;
+    color: #D8286A !important;
+}
+
+
+/* =====================================================
+   MAGICAL TRANSITION
+   ===================================================== */
+
+.plans-transition {
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 80px 25px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    opacity: 0;
+}
+
+.plans-transition.active {
+    display: flex;
+
+    animation: magicalTransition 1.3s ease forwards;
+}
+
+@keyframes magicalTransition {
+
+    0% {
+        opacity: 0;
+        transform: scale(.92);
+        filter: blur(6px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.02);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.transition-sparkles {
+    color: #D8286A;
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    animation: sparkleSpin 3s linear infinite;
+}
+
+@keyframes sparkleSpin {
+
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.transition-gif {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+
+    animation: gifFloat 2.5s ease-in-out infinite;
+}
+
+.plans-transition p {
+    font-family: "Mungil", sans-serif;
+    color: #704C59;
+    font-size: 13px;
+}
+
+.plans-transition h3 {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 36px;
+    line-height: .95;
+}
+
+
+/* =====================================================
+   OUR PLANNER
+   ===================================================== */
+
+.our-planner-section {
+    display: none;
+
+    padding: 80px 20px 50px;
+
+    opacity: 0;
+}
+
+.our-planner-section.active {
+    display: block;
+
+    animation: plannerAppear 1s ease forwards;
+}
+
+@keyframes plannerAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.planner-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.planner-decoration {
+    color: #D8286A;
+    font-size: 15px;
+}
+
+.planner-small-title {
+    font-family: "Mungil", sans-serif;
+    color: #D8286A;
+    font-size: 12px;
+}
+
+.planner-header h3 {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 37px;
+    line-height: .95;
+    margin: 12px 0;
+}
+
+.planner-header > p:last-child {
+    font-family: "Mungil", sans-serif;
+    color: #704C59;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PLAN LIST
+   ===================================================== */
+
+.plans-list {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+}
+
+.planner-card {
+    position: relative;
+
+    background: #FFFDF8;
+
+    border: 1px solid rgba(216, 40, 106, .18);
+
+    padding: 24px 20px 28px;
+
+    box-shadow:
+        0 10px 25px rgba(120, 70, 80, .07);
+
+    opacity: 0;
+
+    transform:
+        translateY(70px)
+        rotate(4deg);
+
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.planner-card.visible {
+    opacity: 1;
+    transform:
+        translateY(0)
+        rotate(var(--card-rotate));
+}
+
+.planner-card:nth-child(even) {
+    --card-rotate: 1.5deg;
+}
+
+.planner-card:nth-child(odd) {
+    --card-rotate: -1.5deg;
+}
+
+.planner-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -10px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-2deg);
+
+    width: 70px;
+    height: 20px;
+
+    background: rgba(216, 40, 106, .12);
+}
+
+.planner-card-label {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(216, 40, 106, .08);
+
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.planner-card-number {
+    float: right;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: rgba(216, 40, 106, .25);
+
+    font-size: 22px;
+}
+
+.planner-card-author {
+    margin-top: 25px;
+
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 11px;
+}
+
+.planner-card-text {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin: 8px 0 0;
+}
+
+
+/* =====================================================
+   MISSION
+   ===================================================== */
+
+.mission-section {
+    margin-top: 110px;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.mission-gif {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+
+    animation: gifFloat 3s ease-in-out infinite;
+}
+
+.mission-small-title {
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 12px;
+}
+
+.mission-section h3 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 36px;
+
+    line-height: .95;
+
+    margin: 12px 0;
+}
+
+.mission-section > p {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.mission-result {
+    display: none;
+
+    margin-top: 35px;
+
+    padding: 35px 20px;
+
+    background: #FFFDF8;
+
+    border: 1.5px solid rgba(216, 40, 106, .25);
+
+    box-shadow:
+        0 15px 35px rgba(120, 70, 80, .1);
+
+    animation: missionPop 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.mission-result.active {
+    display: block;
+}
+
+@keyframes missionPop {
+
+    0% {
+        opacity: 0;
+        transform: scale(.5) rotate(-8deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.06) rotate(2deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+.mission-sparkles {
+    color: #D8286A;
+
+    font-size: 17px;
+
+    animation: sparkleSpin 3s linear infinite;
+}
+
+.mission-label {
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.mission-result h4 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 25px;
+
+    line-height: 1.1;
+
+    margin: 15px 0;
+}
+
+.mission-category {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.mission-ending-gif {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   FINAL ENDING
+   ===================================================== */
+
+.page-seven-ending {
+    margin-top: 100px;
+
+    padding: 80px 25px 40px;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(60px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.page-seven-ending.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ending-sparkles {
+    color: #D8286A;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+.final-ending-gif {
+    width: 140px;
+    height: 140px;
+
+    object-fit: contain;
+
+    animation: gifFloat 3s ease-in-out infinite;
+}
+
+.ending-story {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-top: 25px;
+}
+
+.final-love-button {
+    animation: heartPulse 2s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* =====================================================
+   PAGE 7 NAVIGATION
+   ===================================================== */
+
+.page-seven-navigation {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 50px 20px 90px;
+}
+
+.back-seven-button,
+.next-seven-button {
+    border: 1px solid rgba(216, 40, 106, .35);
+
+    background: transparent;
+
+    color: #D8286A;
+
+    padding: 11px 25px;
+
+    border-radius: 25px;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.next-seven-button {
+    background: #D8286A;
+    color: white;
+}
+
+.back-seven-button:hover,
+.next-seven-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 430px) {
+
+    .page-seven-title {
+        font-size: 31px;
+    }
+
+    .plan-title {
+        font-size: 25px;
+    }
+
+    .planner-header h3 {
+        font-size: 34px;
+    }
+
+}
+
+/* =====================================================
+   PAGE 8 — THE LAST LITTLE THING
+   ===================================================== */
+
+/* -----------------------------------------------------
+   PAGE 8 INITIAL STATE
+   ----------------------------------------------------- */
+
+#pageEight {
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#pageEight.page-eight-active {
+    display: block;
+}
+
+.page-eight-content {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 0 18px 80px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   COMMON REVEAL
+   ===================================================== */
+
+.page-eight-question,
+.memory-saved-section,
+.special-sayang-section,
+.letter-intro,
+.page-eight-ending {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.22, 1, .36, 1);
+}
+
+.page-eight-question.p8-visible,
+.memory-saved-section.p8-visible,
+.special-sayang-section.p8-visible,
+.letter-intro.p8-visible,
+.page-eight-ending.p8-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   ONE LAST QUESTION
+   ===================================================== */
+
+.page-eight-question {
+    position: relative;
+    text-align: center;
+    padding: 90px 5px 30px;
+}
+
+.page-eight-sparkles {
+    color: #D8286A;
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+    animation: p8SparkleFloat 3s ease-in-out infinite;
+}
+
+.page-eight-small-title {
+    font-family: "Mungil", sans-serif;
+    color: #D8286A;
+    font-size: 12px;
+    margin: 0 0 13px;
+}
+
+.page-eight-title {
+    font-family: "StrawberryRuckus", sans-serif;
+    color: #D8286A;
+    font-size: 42px;
+    line-height: 0.9;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.page-eight-question-gif {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 22px auto 12px;
+    animation: p8CuteFloat 3.5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   MEMORY CARD
+   ===================================================== */
+
+.memory-card {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 22px auto 0;
+    padding: 32px 22px 27px;
+
+    background: #FFFDF8;
+    border: 1px solid rgba(216, 40, 106, 0.16);
+
+    box-shadow:
+        0 15px 40px rgba(120, 70, 80, 0.09);
+
+    transform: rotate(-0.7deg);
+
+    border-radius: 2px;
+}
+
+.memory-card::before {
+    content: "";
+    position: absolute;
+
+    top: -11px;
+    left: 50%;
+
+    width: 82px;
+    height: 22px;
+
+    transform: translateX(-50%) rotate(2deg);
+
+    background: rgba(216, 40, 106, 0.12);
+}
+
+.memory-main {
+    font-family: "Mungil", sans-serif;
+    color: #704C59;
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 0 0 22px;
+}
+
+.memory-description {
+    font-family: "Mungil", sans-serif;
+    color: #8B6874;
+    font-size: 12px;
+    line-height: 1.75;
+    margin: 0 0 22px;
+}
+
+
+/* =====================================================
+   MEMORY TEXTAREA
+   ===================================================== */
+
+.memory-question-input {
+    display: block;
+
+    width: 100%;
+    min-height: 145px;
+
+    box-sizing: border-box;
+
+    resize: vertical;
+
+    padding: 15px;
+
+    background: #FFF8EE;
+
+    border: 1px dashed rgba(216, 40, 106, 0.3);
+    border-radius: 5px;
+
+    outline: none;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: #704C59;
+}
+
+.memory-question-input::placeholder {
+    color: #B995A0;
+}
+
+.memory-question-input:focus {
+    border-color: rgba(216, 40, 106, 0.65);
+    box-shadow: 0 0 0 3px rgba(216, 40, 106, 0.06);
+}
+
+.memory-counter {
+    text-align: right;
+
+    margin-top: 7px;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 10px;
+
+    color: #B995A0;
+}
+
+
+/* =====================================================
+   SAVE MEMORY BUTTON
+   ===================================================== */
+
+.save-memory-button {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 13px 15px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #D8286A;
+    color: white;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(216, 40, 106, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.save-memory-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 11px 25px rgba(216, 40, 106, 0.27);
+}
+
+.save-memory-button:active {
+    transform: scale(0.97);
+}
+
+.save-memory-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.memory-question-status {
+    min-height: 18px;
+
+    margin: 12px 0 0;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 11px;
+
+    color: #D8286A;
+}
+
+
+/* =====================================================
+   MEMORY SAVED
+   ===================================================== */
+
+.memory-saved-section {
+    display: none;
+
+    text-align: center;
+
+    padding: 85px 5px 60px;
+}
+
+.memory-saved-section.p8-show {
+    display: block;
+}
+
+.memory-saved-small {
+    font-family: "Mungil", sans-serif;
+    color: #D8286A;
+    font-size: 12px;
+    margin: 0 0 10px;
+}
+
+.memory-saved-gif {
+    display: block;
+
+    width: 145px;
+    height: 145px;
+
+    object-fit: contain;
+
+    margin: 10px auto 12px;
+
+    animation: p8CuteFloat 3.2s ease-in-out infinite;
+}
+
+.memory-saved-section h3 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 39px;
+    line-height: 0.9;
+
+    margin: 0;
+}
+
+.memory-saved-section > p:not(.memory-saved-small) {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    margin: 20px 0 0;
+}
+
+.saved-heart-decoration {
+    margin-top: 20px;
+
+    color: #D8286A;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    animation: p8Heartbeat 2.5s ease-in-out infinite;
+}
+
+.continue-to-letter-button {
+    margin-top: 27px;
+
+    padding: 12px 22px;
+
+    border: 1px solid rgba(216, 40, 106, 0.3);
+    border-radius: 999px;
+
+    background: #FFFDF8;
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.continue-to-letter-button:hover {
+    background: #D8286A;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   SPECIAL SAYANG / BUB
+   ===================================================== */
+
+.special-sayang-section {
+    display: none;
+
+    position: relative;
+
+    text-align: center;
+
+    padding: 80px 5px 65px;
+}
+
+.special-sayang-section.p8-show {
+    display: block;
+}
+
+.special-sayang-sparkles {
+    color: #D8286A;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+    animation: p8SparkleFloat 3s ease-in-out infinite;
+}
+
+.special-sayang-small {
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 11px;
+
+    margin: 0 0 14px;
+}
+
+.special-sayang-title {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 37px;
+    line-height: 0.92;
+
+    margin: 0;
+
+    animation: p8SoftHeartbeat 2.8s ease-in-out infinite;
+}
+
+.special-sayang-gif {
+    display: block;
+
+    width: 145px;
+    height: 145px;
+
+    object-fit: contain;
+
+    margin: 22px auto 10px;
+
+    animation: p8CuteFloat 3.3s ease-in-out infinite;
+}
+
+.special-sayang-text {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin: 10px 0 0;
+}
+
+.special-sayang-text span {
+    display: inline-block;
+
+    color: #D8286A;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    font-size: 30px;
+
+    margin: 2px 0;
+}
+
+.special-sayang-note {
+    margin: 25px auto 0;
+
+    max-width: 320px;
+
+    padding: 20px 18px;
+
+    background: #FFFDF8;
+
+    border: 1px dashed rgba(216, 40, 106, 0.25);
+
+    transform: rotate(1deg);
+
+    box-shadow: 0 10px 30px rgba(120, 70, 80, 0.07);
+}
+
+.special-sayang-note p {
+    font-family: "Mungil", sans-serif;
+
+    color: #8B6874;
+
+    font-size: 11px;
+    line-height: 1.7;
+
+    margin: 0 0 12px;
+}
+
+.special-sayang-note strong {
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 11px;
+}
+
+.special-sayang-hearts {
+    color: #D8286A;
+
+    margin-top: 22px;
+
+    letter-spacing: 4px;
+
+    animation: p8Heartbeat 2.4s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   LETTER INTRO
+   ===================================================== */
+
+.letter-intro {
+    display: none;
+
+    text-align: center;
+
+    padding: 35px 5px 60px;
+}
+
+.letter-intro.p8-show {
+    display: block;
+}
+
+.letter-intro p {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+.read-letter-button {
+    margin-top: 18px;
+
+    padding: 13px 24px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #D8286A;
+    color: white;
+
+    font-family: "Mungil", sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(216, 40, 106, 0.2);
+
+    transition: transform 0.25s ease;
+}
+
+.read-letter-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   DEAR FUTURE US
+   ===================================================== */
+
+.page-eight-ending {
+    display: none;
+
+    position: relative;
+
+    text-align: center;
+
+    padding: 85px 5px 70px;
+}
+
+.page-eight-ending.p8-show {
+    display: block;
+}
+
+.future-letter-sparkles {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.future-letter-sparkles span {
+    position: absolute;
+
+    color: #D8286A;
+
+    opacity: 0;
+
+    animation: p8FutureSparkle 4s ease-in-out infinite;
+}
+
+.future-letter-sparkles span:nth-child(1) {
+    top: 5%;
+    left: 10%;
+}
+
+.future-letter-sparkles span:nth-child(2) {
+    top: 15%;
+    right: 12%;
+    animation-delay: 0.8s;
+}
+
+.future-letter-sparkles span:nth-child(3) {
+    top: 30%;
+    left: 4%;
+    animation-delay: 1.5s;
+}
+
+.future-letter-sparkles span:nth-child(4) {
+    top: 38%;
+    right: 5%;
+    animation-delay: 2s;
+}
+
+.future-letter-sparkles span:nth-child(5) {
+    top: 52%;
+    left: 12%;
+    animation-delay: 2.7s;
+}
+
+.future-letter-small-title {
+    position: relative;
+
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 12px;
+
+    margin: 0 0 13px;
+}
+
+.future-letter-title {
+    position: relative;
+
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 43px;
+
+    line-height: 0.88;
+
+    letter-spacing: 1px;
+
+    margin: 0;
+}
+
+.future-letter-gif {
+    display: block;
+
+    width: 150px;
+    height: 150px;
+
+    object-fit: contain;
+
+    margin: 20px auto 5px;
+
+    animation: p8CuteFloat 3.5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   LETTER PAPER
+   ===================================================== */
+
+.future-letter-paper {
+    position: relative;
+
+    max-width: 345px;
+
+    margin: 25px auto 0;
+
+    padding: 38px 25px 35px;
+
+    box-sizing: border-box;
+
+    background: #FFFDF8;
+
+    border: 1px solid rgba(216, 40, 106, 0.18);
+
+    box-shadow:
+        0 16px 40px rgba(120, 70, 80, 0.09);
+
+    transform: rotate(-1deg);
+
+    animation: p8PaperAppear 1.2s cubic-bezier(.22, 1, .36, 1);
+}
+
+.future-letter-paper::before {
+    content: "";
+
+    position: absolute;
+
+    top: -11px;
+    left: 50%;
+
+    width: 85px;
+    height: 23px;
+
+    transform: translateX(-50%) rotate(2deg);
+
+    background: rgba(216, 40, 106, 0.13);
+}
+
+.future-letter-paper p {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+
+    margin: 0 0 28px;
+}
+
+.letter-middle-gif {
+    display: block;
+
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+
+    margin: -5px auto 25px;
+
+    animation: p8TinyFloat 2.8s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   DATE
+   ===================================================== */
+
+.future-letter-date {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-top: 45px;
+}
+
+.future-letter-date span {
+    color: #D8286A;
+    font-size: 13px;
+}
+
+.future-letter-date p {
+    font-family: "Mungil", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   FINAL CLOSING
+   ===================================================== */
+
+.future-ending-gif {
+    display: block;
+
+    width: 150px;
+    height: 150px;
+
+    object-fit: contain;
+
+    margin: 20px auto 0;
+
+    animation: p8CuteFloat 3.2s ease-in-out infinite;
+}
+
+.to-be-continued {
+    margin-top: 30px;
+
+    padding-top: 22px;
+
+    border-top: 1px dashed rgba(216, 40, 106, 0.25);
+}
+
+.to-be-continued p {
+    font-family: "Mungil", sans-serif;
+
+    color: #704C59;
+
+    font-size: 11px;
+
+    margin: 0 0 9px;
+}
+
+.to-be-continued h4 {
+    font-family: "StrawberryRuckus", sans-serif;
+
+    color: #D8286A;
+
+    font-size: 35px;
+
+    line-height: 0.9;
+
+    margin: 0;
+
+    animation: p8SoftHeartbeat 2.5s ease-in-out infinite;
+}
+
+.continued-decoration {
+    margin-top: 18px;
+
+    color: #D8286A;
+
+    font-size: 12px;
+
+    opacity: 0.8;
+}
+
+.final-love-button {
+    display: block;
+
+    margin: 30px auto 0;
+
+    padding: 14px 27px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #D8286A;
+
+    color: white;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(216, 40, 106, 0.23);
+
+    animation: p8ButtonPulse 2.5s ease-in-out infinite;
+
+    transition: transform 0.3s ease;
+}
+
+.final-love-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   PAGE 8 NAVIGATION
+   ===================================================== */
+
+.page-eight-navigation {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+    padding-bottom: 30px;
+}
+
+.back-eight-button {
+    padding: 10px 22px;
+
+    border: 1px solid rgba(216, 40, 106, 0.25);
+
+    border-radius: 999px;
+
+    background: transparent;
+
+    color: #D8286A;
+
+    font-family: "Mungil", sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.back-eight-button:hover {
+    background: #D8286A;
+    color: white;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes p8CuteFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+@keyframes p8TinyFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+
+}
+
+@keyframes p8SparkleFloat {
+
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+
+}
+
+@keyframes p8Heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+@keyframes p8SoftHeartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.025);
+    }
+
+}
+
+@keyframes p8PaperAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) rotate(-4deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-1deg);
+    }
+
+}
+
+@keyframes p8FutureSparkle {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes p8ButtonPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 10px 25px rgba(216, 40, 106, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 13px 32px rgba(216, 40, 106, 0.34);
+    }
+
+}

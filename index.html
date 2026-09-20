@@ -1,0 +1,2305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Pengaturan dasar halaman -->
+    <meta charset="UTF-8">
+
+    <!-- Supaya website responsive di HP -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Judul yang muncul di tab browser -->
+    <title>Our Little Story ♡</title>
+
+    <!-- Menghubungkan HTML dengan CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND MUSIC
+         ===================================================== -->
+
+    <audio id="backgroundMusic" loop>
+        <source src="./music/lagu.mp3" type="audio/mpeg">
+    </audio>
+
+
+
+    <!-- =====================================================
+         LOVE BACKGROUND
+         ===================================================== -->
+
+    <div class="floating-hearts"></div>
+
+
+
+    <!-- =====================================================
+         PAGE 1 — SECRET CODE
+         ===================================================== -->
+
+    <section
+        class="secret-page"
+        id="secretPage"
+    >
+
+        <div class="secret-content">
+
+
+            <!-- Tulisan kecil di atas judul -->
+
+            <p class="eyebrow">
+                hadiah kecill dari aku :p
+            </p>
+
+
+
+            <!-- =================================================
+                 JUDUL + DEKORASI PNG
+                 ================================================= -->
+
+            <div class="story-title">
+
+
+                <!-- PNG 1 -->
+
+                <img
+                    src="images/png1.png"
+                    class="png-1"
+                    alt="decoration"
+                >
+
+
+                <!-- Judul utama -->
+
+                <h1>
+                    OUR LITTLE<br>
+                    STORY
+                </h1>
+
+
+                <!-- PNG 2 -->
+
+                <img
+                    src="images/png2.png"
+                    class="png-2"
+                    alt="decoration"
+                >
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECRET CODE
+                 ================================================= -->
+
+            <p class="instruction">
+                enter the secret code
+            </p>
+
+
+
+            <!-- Kotak input + GIF -->
+
+            <div class="code-box">
+
+
+                <!-- Tempat memasukkan kode -->
+
+                <input
+                    type="password"
+                    id="secretCode"
+                    placeholder="••••••••"
+                    maxlength="8"
+                    autocomplete="off"
+                >
+
+
+                <!-- GIF di sebelah kanan -->
+
+                <img
+                    src="gifs/gif1.gif"
+                    class="gif-right"
+                    alt="cute decoration"
+                >
+
+
+            </div>
+
+
+
+            <!-- Tombol masuk -->
+
+            <button id="enterButton">
+                ENTER
+            </button>
+
+
+
+            <!-- Pesan kalau kode salah -->
+
+            <p id="errorMessage"></p>
+
+
+
+            <!-- GIF ketika kode salah -->
+
+            <div
+                class="wrong-popup"
+                id="wrongPopup"
+            >
+
+                <img
+                    src="gifs/wrong.gif"
+                    alt="cute reaction"
+                >
+
+            </div>
+
+
+
+            <!-- Petunjuk kecil -->
+
+            <p class="hint">
+                * it's a date only we know
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- =====================================================
+         PAGE 2 — ANNIVERSARY SURPRISE
+         ===================================================== -->
+
+    <section
+        class="anniversary-page"
+        id="anniversaryPage"
+    >
+
+        <div class="anniversary-content">
+
+
+            <!-- Tulisan kecil -->
+
+            <p class="eyebrow">
+                a little surprise for you ♡
+            </p>
+
+
+
+            <!-- Gift GIF -->
+
+            <img
+                src="gifs/gift.gif"
+                class="gift-gif"
+                alt="gift"
+            >
+
+
+
+            <!-- Pesan anniversary -->
+
+            <p class="anniversary-message">
+
+                happy 2nd anniversary, BUBYYYY ♡
+
+                <br>
+
+                two years with you,
+
+                <br>
+
+                and i'd still choose you every time.
+
+            </p>
+
+
+
+            <!-- Tombol NEXT -->
+
+            <button
+                class="next-button"
+                id="nextButton"
+            >
+                NEXT
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- =====================================================
+         PAGE 3 — MEMORY
+         ===================================================== -->
+
+    <section
+        class="story-page"
+        id="storyPage"
+    >
+
+        <div class="memory-content">
+
+
+            <!-- MEMORY CARD -->
+
+            <div class="memory-card">
+
+
+                <!-- FOTO KALIAN -->
+
+                <img
+                    src="./images/out-photo.png"
+                    class="memory-photo"
+                    alt="our memory"
+                >
+
+
+
+                <!-- TANGGAL -->
+
+                <p class="memory-date">
+                    21 SEPTEMBER 2024
+                </p>
+
+
+
+                <!-- TEXT -->
+
+                <p class="memory-text">
+
+                    liat kt dulu masi kicil ( ᴗ̀ ̫ᴗ́ )
+
+                    <br>
+
+                    aku masi imut siii smpai skrg,
+
+                    <br>
+
+                    km dulu botak sbnrnya ak takut lihat botak
+
+                    <br>
+
+                    tp gpp ak syg km ♡
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PAGE 3 NAVIGATION
+                 BACK + NEXT MENYAMPING
+                 ================================================= -->
+
+            <div class="memory-navigation">
+
+
+                <!-- BACK -->
+
+                <button
+                    type="button"
+                    class="back-button"
+                    id="backButton"
+                >
+                    BACK
+                </button>
+
+
+
+                <!-- NEXT -->
+
+                <button
+                    type="button"
+                    class="next-memory-button"
+                    id="nextMemoryButton"
+                >
+                    NEXT
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- =====================================================
+         PAGE 4 — MUSIC + MEMORIES
+         ===================================================== -->
+
+    <section
+        class="page-four"
+        id="pageFour"
+    >
+
+        <div class="page-four-content">
+
+
+            <!-- =================================================
+                 MUSIC INTRO
+                 ================================================= -->
+
+            <div
+                class="music-intro"
+                id="musicIntro"
+            >
+
+
+                <!-- Tulisan -->
+
+                <p class="music-text">
+                    tolong play dulu musicnyaa !!! :3
+                </p>
+
+
+
+                <!-- PLAY + GIF -->
+
+                <div class="music-control">
+
+
+                    <!-- Tombol PLAY -->
+
+                    <button
+                        type="button"
+                        class="music-play-button"
+                        id="musicPlayButton"
+                    >
+                        PLAY
+                    </button>
+
+
+
+                    <!-- GIF -->
+
+                    <img
+                        src="./gifs/memory1.gif"
+                        class="music-gif"
+                        alt="cute music decoration"
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MEMORIES
+                 ================================================= -->
+
+            <div
+                class="memories-container"
+                id="memoriesContainer"
+            >
+
+
+                <!-- =================================================
+                     MEMORY 1
+                     ================================================= -->
+
+                <div
+                    class="memory-polaroid memory-one"
+                >
+
+
+                    <!-- FOTO -->
+
+                    <div class="polaroid-photo">
+
+                        <img
+                            src="./images/foto1.png"
+                            alt="memory 1"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CAPTION -->
+
+                    <p class="polaroid-caption">
+                        first time fotbar habis jalan2 diexpo!! SGTTT SERUUUUU, disini jg prtama kali pegangan tangan hehehehehehe 
+                    </p>
+
+
+
+                    <!-- GIF -->
+
+                    <img
+                        src="./gifs/memory1.gif"
+                        class="polaroid-gif gif-one"
+                        alt="decoration"
+                    >
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MEMORY 2
+                     ================================================= -->
+
+                <div
+                    class="memory-polaroid memory-two"
+                >
+
+
+                    <!-- FOTO -->
+
+                    <div class="polaroid-photo">
+
+                        <img
+                            src="./images/foto2.png"
+                            alt="memory 2"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CAPTION -->
+
+                    <p class="polaroid-caption">
+                        ini first time nyore anjai km ngambekk krna anak2 genap kerumahku, pdhl hbs itu kt jalan masama kokkkk tp kurang lama, ak takut pulang malam2 krna ktnya bnyk begal, wlw sbnrnya ak msih mw lama lamaa
+                    </p>
+
+
+
+                    <!-- GIF -->
+
+                    <img
+                        src="./gifs/memory2.gif"
+                        class="polaroid-gif gif-two"
+                        alt="decoration"
+                    >
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MEMORY 3
+                     ================================================= -->
+
+                <div
+                    class="memory-polaroid memory-three"
+                >
+
+
+                    <!-- FOTO -->
+
+                    <div class="polaroid-photo">
+
+                        <img
+                            src="./images/foto3.png"
+                            alt="memory 3"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CAPTION -->
+
+                    <p class="polaroid-caption">
+                        INI PS KRJA TUGASSS PA ILHAM ini jg prtama kali nginap di kopken, bnyak hecticnya si mana ak jatuh trs sakit tp km marah2in HUFTTT sedih
+                    </p>
+
+
+
+                    <!-- GIF -->
+
+                    <img
+                        src="./gifs/memory3.gif"
+                        class="polaroid-gif gif-three"
+                        alt="decoration"
+                    >
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MEMORY 4
+                     ================================================= -->
+
+                <div
+                    class="memory-polaroid memory-four"
+                >
+
+
+                    <!-- FOTO -->
+
+                    <div class="polaroid-photo">
+
+                        <img
+                            src="./images/foto4.png"
+                            alt="memory 4"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CAPTION -->
+
+                    <p class="polaroid-caption">
+                        ini habis main ps, 3 jam kah 4 jam LMA BGT, ak nonton km main resident evil tp kt jg abis main itu yg parkur, syg sekali tmpt psnya suda tutup tch
+                    </p>
+
+
+
+                    <!-- GIF -->
+
+                    <img
+                        src="./gifs/memory4.gif"
+                        class="polaroid-gif gif-four"
+                        alt="decoration"
+                    >
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PAGE 4 NAVIGATION
+                     ================================================= -->
+
+                <div
+                    class="memory-four-navigation"
+                >
+
+
+                    <!-- BACK -->
+
+                    <button
+                        type="button"
+                        class="back-four-button"
+                        id="backFourButton"
+                    >
+                        BACK
+                    </button>
+
+
+
+                    <!-- NEXT -->
+
+                    <button
+                        type="button"
+                        class="next-four-button"
+                        id="nextFourButton"
+                    >
+                        NEXT
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+     PAGE 5 — LITTLE THINGS ABOUT US
+     ===================================================== -->
+
+<section class="page-five" id="pageFive">
+
+    <div class="page-five-content">
+
+        <!-- HEADER -->
+        <div class="page-five-header">
+
+            <div class="top-decoration">
+                ♡　✦　˚　୨୧　˚　✦　♡
+            </div>
+
+            <p class="page-five-small-title">
+                a few little things
+            </p>
+
+            <h2 class="page-five-title">
+                ABOUT US
+            </h2>
+
+            <p class="page-five-subtitle">
+                some little moments that make me love us even more ♡
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             MEMORY 1
+             ================================================= -->
+
+        <div class="page-five-memory memory-five-one">
+
+            <div class="floating-decoration decoration-one">
+                ✦
+            </div>
+
+            <div class="gif-wrapper gif-wrapper-one">
+
+    <video
+        src="videos/video1.mp4"
+        class="page-five-gif"
+        autoplay
+        loop
+        muted
+        playsinline
+    ></video>
+
+</div>
+
+            <div class="tiny-decoration decoration-one-bottom">
+                ˚　♡　✦
+            </div>
+
+            <div class="page-five-caption caption-one">
+
+                <p>
+                    little things with you
+                    <br>
+                    somehow always become
+                    <br>
+                    my favorite memories ♡
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MEMORY 2
+             ================================================= -->
+
+        <div class="page-five-memory memory-five-two">
+
+            <div class="floating-decoration decoration-two">
+                ୨୧
+            </div>
+
+            <div class="page-five-caption caption-two">
+
+                <p>
+                    even the most random
+                    <br>
+                    moments feel special
+                    <br>
+                    when they're with you ˚♡
+                </p>
+
+            </div>
+
+            <div class="gif-wrapper gif-wrapper-two">
+
+    <video
+        src="videos/video2.mp4"
+        class="page-five-gif"
+        autoplay
+        loop
+        muted
+        playsinline
+    ></video>
+
+</div>
+
+            <div class="tiny-decoration decoration-two-bottom">
+                ✦　˚　♡
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MEMORY 3
+             ================================================= -->
+
+        <div class="page-five-memory memory-five-three">
+
+            <div class="tiny-decoration decoration-three-top">
+                ♡　✦
+            </div>
+
+            <div class="gif-wrapper gif-wrapper-three">
+
+    <video
+        src="videos/video3.mp4"
+        class="page-five-gif"
+        autoplay
+        loop
+        muted
+        playsinline
+    ></video>
+
+</div>
+
+            <div class="floating-decoration decoration-three">
+                ˚
+            </div>
+
+            <div class="page-five-caption caption-three">
+
+                <p>
+                    intermezzo dikit
+                    <br>
+                    pacalmu imut bgt kan yak
+                    <br>
+                    KAN KANN
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MEMORY 4
+             ================================================= -->
+
+        <div class="page-five-memory memory-five-four">
+
+            <div class="page-five-caption caption-four">
+
+                <p>
+                    if i could choose again,
+                    <br>
+                    i'd still choose
+                    <br>
+                    you. every time. ♡
+                </p>
+
+            </div>
+
+<div class="gif-wrapper gif-wrapper-four">
+
+    <video
+        src="videos/video4.mp4"
+        class="page-five-gif"
+        autoplay
+        loop
+        muted
+        playsinline
+    ></video>
+
+</div>
+
+            <div class="floating-decoration decoration-four">
+                ✦　୨୧　˚
+            </div>
+
+            <div class="tiny-decoration decoration-four-bottom">
+                ♡　♡　♡
+            </div>
+
+        </div>
+
+
+        <!-- FINAL -->
+        <div class="page-five-ending">
+
+            <p class="ending-decoration">
+                ♡　✦　˚　♡　˚　✦　♡
+            </p>
+
+            <p class="ending-text">
+                and this is only
+                <br>
+                another little chapter
+                <br>
+                of our story ♡
+            </p>
+
+            <div class="page-five-navigation">
+
+                <button
+                    type="button"
+                    class="back-five-button"
+                    id="backFiveButton"
+                >
+                    BACK
+                </button>
+
+                <button
+                    type="button"
+                    class="next-five-button"
+                    id="nextFiveButton"
+                >
+                    NEXT
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PAGE 6 — OUR WISHES
+     ===================================================== -->
+
+<section class="page-six" id="pageSix">
+
+    <div class="page-six-content">
+
+        <!-- =========================
+             OPENING
+        ========================== -->
+
+        <div class="page-six-header" id="wishOpening">
+
+            <p class="page-six-decoration">
+                ♡　✦　˚　୨୧　˚　✦　♡
+            </p>
+
+            <p class="page-six-small-title">
+                one last little thing...
+            </p>
+
+            <h2 class="page-six-title">
+                A WISH
+                <br>
+                FOR US
+            </h2>
+
+            <p class="page-six-subtitle">
+                before you leave something for our story,
+                <br>
+                there's a tiny little thing you have to do ♡
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             FIRST WISH
+        ========================== -->
+
+        <div class="first-wish-section" id="firstWishSection">
+
+            <p class="first-wish-title">
+                write something for us ♡
+            </p>
+
+            <p class="first-wish-description">
+                something you've always wished
+                <br>
+                for our little story...
+            </p>
+
+            <textarea
+                id="firstWishInput"
+                class="wish-input"
+                maxlength="1000"
+                placeholder="write your wish here..."
+            ></textarea>
+
+            <div class="wish-counter">
+                <span id="firstWishCounter">0</span>/1000
+            </div>
+
+            <button
+                type="button"
+                class="send-wish-button"
+                id="sendFirstWishButton"
+            >
+                SEND WISH ♡
+            </button>
+
+            <p class="wish-status" id="firstWishStatus"></p>
+
+        </div>
+
+
+        <!-- =========================
+             POPUP OVERLAY
+        ========================== -->
+
+        <div
+            class="wish-popup-overlay"
+            id="wishPopupOverlay"
+        >
+
+            <div class="wish-popup" id="wishPopup">
+
+                <button
+                    type="button"
+                    class="popup-close"
+                    id="popupCloseButton"
+                >
+                    ×
+                </button>
+
+                <p
+                    class="popup-small-title"
+                    id="popupSmallTitle"
+                ></p>
+
+                <h3
+                    class="popup-title"
+                    id="popupTitle"
+                ></h3>
+
+                <p
+                    class="popup-text"
+                    id="popupText"
+                ></p>
+
+                <img
+                    src=""
+                    class="popup-gif"
+                    id="popupGif"
+                    alt="cute decoration"
+                >
+
+                <button
+                    type="button"
+                    class="popup-next-button"
+                    id="popupNextButton"
+                >
+                    NEXT ♡
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             THREE EXTRA WISHES
+        ========================== -->
+
+        <div
+            class="extra-wishes-section"
+            id="extraWishesSection"
+        >
+
+            <div class="extra-wishes-header">
+
+                <p class="extra-wishes-decoration">
+                    ♡　✦　♡
+                </p>
+
+                <p class="extra-wishes-small-title">
+                    three little wishes
+                </p>
+
+                <h3>
+                    FOR OUR STORY
+                </h3>
+
+                <p>
+                    three wishes,
+                    <br>
+                    three little pieces of your heart ♡
+                </p>
+
+            </div>
+
+
+            <!-- SELF -->
+
+            <div class="extra-wish-box">
+
+                <div class="extra-wish-number">
+                    01
+                </div>
+
+                <h4>
+                    FOR YOURSELF ♡
+                </h4>
+
+                <p>
+                    something you wish
+                    <br>
+                    for yourself in our relationship
+                </p>
+
+                <textarea
+                    id="selfWishInput"
+                    class="wish-input"
+                    maxlength="1000"
+                    placeholder="a wish for yourself..."
+                ></textarea>
+
+                <div class="wish-counter">
+                    <span id="selfWishCounter">0</span>/1000
+                </div>
+
+            </div>
+
+
+            <!-- FOR ME -->
+
+            <div class="extra-wish-box">
+
+                <div class="extra-wish-number">
+                    02
+                </div>
+
+                <h4>
+                    FOR ME ♡
+                </h4>
+
+                <p>
+                    something you wish
+                    <br>
+                    for me, your cutest girlfriend ever :3
+                </p>
+
+                <textarea
+                    id="partnerWishInput"
+                    class="wish-input"
+                    maxlength="1000"
+                    placeholder="a wish for me..."
+                ></textarea>
+
+                <div class="wish-counter">
+                    <span id="partnerWishCounter">0</span>/1000
+                </div>
+
+            </div>
+
+
+            <!-- FOR US -->
+
+            <div class="extra-wish-box">
+
+                <div class="extra-wish-number">
+                    03
+                </div>
+
+                <h4>
+                    FOR US ♡
+                </h4>
+
+                <p>
+                    something you wish
+                    <br>
+                    for us!
+                </p>
+
+                <textarea
+                    id="usWishInput"
+                    class="wish-input"
+                    maxlength="1000"
+                    placeholder="a wish for us..."
+                ></textarea>
+
+                <div class="wish-counter">
+                    <span id="usWishCounter">0</span>/1000
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="save-all-wishes-button"
+                id="saveAllWishesButton"
+            >
+                SAVE OUR WISHES ♡
+            </button>
+
+            <p
+                class="wish-status"
+                id="extraWishStatus"
+            ></p>
+
+        </div>
+
+
+        <!-- =========================
+             SECRET UNLOCK
+        ========================== -->
+
+        <div
+            class="unlock-section"
+            id="unlockSection"
+        >
+
+            <p class="unlock-decoration">
+                ♡　✦　˚　♡　˚　✦　♡
+            </p>
+
+            <p class="unlock-small-title">
+                you did your part ♡
+            </p>
+
+            <h3>
+                THERE'S ONE
+                <br>
+                LAST SECRET
+            </h3>
+
+            <p>
+                four little wishes,
+                <br>
+                all written from your heart.
+                <br><br>
+                now let's see what's waiting
+                <br>
+                for you at the end...
+            </p>
+
+            <button
+                type="button"
+                class="unlock-secret-button"
+                id="unlockSecretButton"
+            >
+                UNLOCK OUR WISHES ♡
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             CODE SECTION
+        ========================== -->
+
+        <div
+            class="code-unlock-section"
+            id="codeUnlockSection"
+        >
+
+            <p class="code-decoration">
+                🔐
+            </p>
+
+            <p class="code-small-title">
+                our little secret
+            </p>
+
+            <h3>
+                WHAT'S
+                <br>
+                OUR CODE?
+            </h3>
+
+            <p>
+                some things are meant to be opened
+                <br>
+                only by the two of us ♡
+            </p>
+
+            <input
+                type="password"
+                id="ourWishCode"
+                class="our-wish-code"
+                maxlength="20"
+                placeholder="secret code"
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                class="open-our-wishes-button"
+                id="openOurWishesButton"
+            >
+                OPEN ♡
+            </button>
+
+            <p
+                class="code-error"
+                id="ourWishCodeError"
+            ></p>
+
+        </div>
+
+
+        <!-- =========================
+             OUR WISHES
+        ========================== -->
+
+        <div
+            class="our-wishes-section"
+            id="ourWishesSection"
+        >
+
+            <div class="our-wishes-header">
+
+                <p class="our-wishes-decoration">
+                    ♡　✦　˚　♡　˚　✦　♡
+                </p>
+
+                <p class="our-wishes-small-title">
+                    you found them...
+                </p>
+
+                <h3>
+                    OUR
+                    <br>
+                    WISHES
+                </h3>
+
+                <p>
+                    little pieces of our hearts,
+                    <br>
+                    all in one place ♡
+                </p>
+
+            </div>
+
+
+            <div
+                class="our-wishes-list"
+                id="ourWishesList"
+            ></div>
+
+
+            <div class="our-wishes-ending">
+
+                <p>
+                    these aren't just wishes anymore.
+                    <br>
+                    they're little pieces of what
+                    <br>
+                    we hope our story becomes.
+                </p>
+
+                <p class="ending-love">
+                    let's make them come true together bubyy. ♡
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             NAVIGATION
+        ========================== -->
+
+        <div
+            class="page-six-ending"
+            id="pageSixEnding"
+        >
+
+            <p>
+                ♡　✦　˚　♡　˚　✦　♡
+            </p>
+
+            <div class="page-six-navigation">
+
+                <button
+                    type="button"
+                    class="back-six-button"
+                    id="backSixButton"
+                >
+                    BACK
+                </button>
+
+                <button
+                    type="button"
+                    class="next-six-button"
+                    id="nextSixButton"
+                >
+                    NEXT
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PAGE 7 — OUR LITTLE PLANS
+     ===================================================== -->
+
+<section class="page-seven" id="pageSeven">
+
+    <div class="page-seven-content">
+
+
+        <!-- =================================================
+             OPENING
+             ================================================= -->
+
+        <div class="page-seven-opening">
+
+            <div class="page-seven-sparkles">
+                <span>✦</span>
+                <span>˚</span>
+                <span>♡</span>
+                <span>✧</span>
+                <span>˚</span>
+                <span>✦</span>
+                <span>♡</span>
+            </div>
+
+            <img
+                src="gifs/page7-excited.gif"
+                class="page-seven-opening-gif"
+                alt="cute decoration"
+            >
+
+            <p class="page-seven-small-title">
+                okay... one more thing ♡
+            </p>
+
+            <h2 class="page-seven-title">
+                LALUUU...
+                <br>
+                APA PLAN
+                <br>
+                YANG KM MW
+                <br>
+                LAKUKAN ATAU COBA
+                <br>
+                DGN AKUUUU?!!!
+            </h2>
+
+            <p class="page-seven-subtitle">
+                yang bener bener bener
+                <br>
+                kamu pengen bgt lakukan sm AKUUUU
+                <br>
+                jgn dibuat buat!!!
+                <br>
+                harus pikirkan dari kepala, hati, jiwa, dan ragamu :3
+                <br><br>
+                even the silly ones.
+                <br>
+                especially the silly ones. ♡
+            </p>
+
+            <div class="page-seven-scroll-hint">
+                <span>scroll down</span>
+                <span class="scroll-arrow">↓</span>
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PLAN 01 — DATE
+             ================================================= -->
+
+        <div class="plan-card plan-card-one">
+
+            <div class="plan-tape">✦</div>
+
+            <div class="plan-number">
+                01
+            </div>
+
+            <div class="plan-gif-wrapper">
+                <img
+                    src="gifs/page7-date.gif"
+                    class="plan-gif"
+                    alt="date decoration"
+                >
+            </div>
+
+            <p class="plan-category">
+                NEXT DATE
+            </p>
+
+            <h3 class="plan-title">
+                WHERE ARE
+                <br>
+                YOU TAKING ME?
+            </h3>
+
+            <p class="plan-description">
+                kalau besok aku bilang
+                <br>
+                "jalan2 yuk bubyy
+                <br>
+                km akan ajak ak kemanaa
+            </p>
+
+            <textarea
+                id="planDateInput"
+                class="plan-input"
+                maxlength="1000"
+                placeholder="tell me where we're going..."
+            ></textarea>
+
+            <div class="plan-counter">
+                <span id="planDateCounter">0</span>/1000
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PLAN 02 — TRY
+             ================================================= -->
+
+        <div class="plan-card plan-card-two">
+
+            <div class="plan-tape">♡</div>
+
+            <div class="plan-number">
+                02
+            </div>
+
+            <div class="plan-gif-wrapper">
+                <img
+                    src="gifs/page7-try.gif"
+                    class="plan-gif"
+                    alt="trying something new"
+                >
+            </div>
+
+            <p class="plan-category">
+                LET'S TRY THIS
+            </p>
+
+            <h3 class="plan-title">
+                SOMETHING
+                <br>
+                NEW?
+            </h3>
+
+            <p class="plan-description">
+                sesuatu yang belum pernah
+                <br>
+                kita lakukan sama sama  
+                <br>
+                yg km pengen coba dgn aku
+            </p>
+
+            <textarea
+                id="planTryInput"
+                class="plan-input"
+                maxlength="1000"
+                placeholder="something we've never tried..."
+            ></textarea>
+
+            <div class="plan-counter">
+                <span id="planTryCounter">0</span>/1000
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PLAN 03 — FOOD
+             ================================================= -->
+
+        <div class="plan-card plan-card-three">
+
+            <div class="plan-tape">✦</div>
+
+            <div class="plan-number">
+                03
+            </div>
+
+            <div class="plan-gif-wrapper">
+                <img
+                    src="gifs/page7-food.gif"
+                    class="plan-gif"
+                    alt="food decoration"
+                >
+            </div>
+
+            <p class="plan-category">
+                FEED US
+            </p>
+
+            <h3 class="plan-title">
+                WHAT ARE
+                <br>
+                WE EATING?
+            </h3>
+
+            <p class="plan-description">
+                makanan, minuman,
+                <br>
+                atau tempat makan
+                <br>
+                yang km pengen kt cobain
+            </p>
+
+            <textarea
+                id="planFoodInput"
+                class="plan-input"
+                maxlength="1000"
+                placeholder="something delicious..."
+            ></textarea>
+
+            <div class="plan-counter">
+                <span id="planFoodCounter">0</span>/1000
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PLAN 04 — TRAVEL
+             ================================================= -->
+
+        <div class="plan-card plan-card-four">
+
+            <div class="plan-tape">୨୧</div>
+
+            <div class="plan-number">
+                04
+            </div>
+
+            <div class="plan-gif-wrapper">
+                <img
+                    src="gifs/page7-travel.gif"
+                    class="plan-gif"
+                    alt="travel decoration"
+                >
+            </div>
+
+            <p class="plan-category">
+                TAKE ME SOMEWHERE
+            </p>
+
+            <h3 class="plan-title">
+                WHERE WOULD
+                <br>
+                WE GO?
+            </h3>
+
+            <p class="plan-description">
+                kota, pantai, gunung,
+                <br>
+                pulau lain, atau negara layin?
+                <br>
+                mana yg km akan prtama ajak ak nantii
+            </p>
+
+            <textarea
+                id="planTravelInput"
+                class="plan-input"
+                maxlength="1000"
+                placeholder="somewhere far away..."
+            ></textarea>
+
+            <div class="plan-counter">
+                <span id="planTravelCounter">0</span>/1000
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PLAN 05 — SILLY
+             ================================================= -->
+
+        <div class="plan-card plan-card-five">
+
+            <div class="plan-tape">♡</div>
+
+            <div class="plan-number">
+                05
+            </div>
+
+            <div class="plan-gif-wrapper">
+                <img
+                    src="gifs/page7-hug.gif"
+                    class="plan-gif"
+                    alt="cute decoration"
+                >
+            </div>
+
+            <p class="plan-category">
+                JUST BECAUSE
+            </p>
+
+            <h3 class="plan-title">
+                SOMETHING
+                <br>
+                SMALL & SILLY
+            </h3>
+
+            <p class="plan-description">
+                small date... 
+                <br>
+                yg... kyknya..
+                <br>
+                seru.. ??
+            </p>
+
+            <textarea
+                id="planSillyInput"
+                class="plan-input"
+                maxlength="1000"
+                placeholder="something random you want..."
+            ></textarea>
+
+            <div class="plan-counter">
+                <span id="planSillyCounter">0</span>/1000
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SAVE PLANS
+             ================================================= -->
+
+        <div class="plans-save-section">
+
+            <img
+                src="gifs/page7-save.gif"
+                class="save-gif"
+                alt="saving plans"
+            >
+
+            <p class="save-small-title">
+                five little answers ♡
+            </p>
+
+            <h3>
+                READY TO
+                <br>
+                SAVE THEM?
+            </h3>
+
+            <p>
+                AK YAKIN JWBN MU BAGUS
+                <br>
+                KLO JELEK AK NGMBEK
+            </p>
+
+            <button
+                type="button"
+                class="save-plans-button"
+                id="savePlansButton"
+            >
+                SAVE OUR PLANS ♡
+            </button>
+
+            <p
+                class="plans-status"
+                id="plansStatus"
+            ></p>
+
+        </div>
+
+
+        <!-- =================================================
+             MAGICAL TRANSITION
+             ================================================= -->
+
+        <div
+            class="plans-transition"
+            id="plansTransition"
+        >
+
+            <div class="transition-sparkles">
+                ✦　˚　♡　✧　˚　✦
+            </div>
+
+            <img
+                src="gifs/page7-reveal.gif"
+                class="transition-gif"
+                alt="cute reveal"
+            >
+
+            <p>
+                WAIT...
+            </p>
+
+            <h3>
+                YOU JUST MADE
+                <br>
+                A LITTLE LIST
+                <br>
+                FOR US ♡
+            </h3>
+
+            <p>
+                and guess what?
+                <br>
+                i have 5 plans too. :3
+            </p>
+
+            <button
+                type="button"
+                class="reveal-plans-button"
+                id="revealPlansButton"
+            >
+                SHOW ME OUR PLANS ✦
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             OUR LITTLE PLANNER
+             ================================================= -->
+
+        <div
+            class="our-planner-section"
+            id="ourPlannerSection"
+        >
+
+            <div class="planner-header">
+
+                <p class="planner-decoration">
+                    ✦　♡　˚　✦　♡　˚　✦
+                </p>
+
+                <p class="planner-small-title">
+                    things we still have to do...
+                </p>
+
+                <h3>
+                    OUR LITTLE
+                    <br>
+                    PLANNER
+                </h3>
+
+                <p>
+                    five from you.
+                    <br>
+                    five from me.
+                    <br>
+                    ten little possibilities. ♡
+                </p>
+
+            </div>
+
+
+            <!-- PLANS WILL BE INSERTED BY JS -->
+
+            <div
+                class="plans-list"
+                id="plansList"
+            ></div>
+
+
+            <!-- =================================================
+                 RANDOM MISSION
+                 ================================================= -->
+
+            <div
+                class="mission-section"
+                id="missionSection"
+            >
+
+                <img
+                    src="gifs/page7-happy.gif"
+                    class="mission-gif"
+                    alt="happy decoration"
+                >
+
+                <p class="mission-small-title">
+                    wait wait wait...
+                </p>
+
+                <h3>
+                    WHICH ONE
+                    <br>
+                    SHOULD WE
+                    <br>
+                    DO FIRST?
+                </h3>
+
+                <p>
+                    there are too many cute plans...
+                    <br>
+                    so let's let fate choose one. :3
+                </p>
+
+                <button
+                    type="button"
+                    class="pick-plan-button"
+                    id="pickPlanButton"
+                >
+                    PICK ONE FOR US ✦
+                </button>
+
+
+                <div
+                    class="mission-result"
+                    id="missionResult"
+                >
+
+                    <div class="mission-sparkles">
+                        ✦　♡　✦
+                    </div>
+
+                    <p class="mission-label">
+                        OUR FIRST MISSION
+                    </p>
+
+                    <h4 id="missionPlanText"></h4>
+
+                    <p
+                        class="mission-category"
+                        id="missionPlanCategory"
+                    ></p>
+
+                    <img
+                        src="gifs/page7-ending.gif"
+                        class="mission-ending-gif"
+                        alt="cute ending"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NAVIGATION
+                 ================================================= -->
+
+            <div class="page-seven-navigation">
+
+                <button
+                    type="button"
+                    class="back-seven-button"
+                    id="backSevenButton"
+                >
+                    BACK
+                </button>
+
+                <button
+                    type="button"
+                    class="next-seven-button"
+                    id="nextSevenButton"
+                >
+                    END ♡
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PAGE 8 — THE LAST LITTLE THING
+     ===================================================== -->
+
+<section class="page-eight" id="pageEight">
+
+    <div class="page-eight-content">
+
+        <!-- =================================================
+             ONE LAST QUESTION
+             ================================================= -->
+
+        <div class="page-eight-question" id="oneLastQuestion">
+
+            <div class="page-eight-sparkles">
+                ♡　✦　˚　♡　˚　✦　♡
+            </div>
+
+            <p class="page-eight-small-title">
+                before the story continues...
+            </p>
+
+            <h2 class="page-eight-title">
+                ONE LAST
+                <br>
+                QUESTION ♡
+            </h2>
+
+            <img
+                src="gifs/page7-question.gif"
+                class="page-eight-question-gif"
+                alt="cute question decoration"
+            >
+
+            <div class="memory-card">
+
+                <p class="memory-main">
+                    momen apa yang paling membahagiakan,
+                    <br>
+                    dan paling sering kamu ingat
+                    <br>
+                    sama akuuuu selamaa 2 tahunn inii
+                </p>
+
+                <p class="memory-description">
+                    <br>
+                    tulis aja yang paling sering muncul
+                    <br>
+                    di kepalamu :3
+                </p>
+
+                <textarea
+                    id="memoryQuestionInput"
+                    class="memory-question-input"
+                    maxlength="2000"
+                    placeholder="tell me about that moment..."
+                ></textarea>
+
+                <div class="memory-counter">
+                    <span id="memoryQuestionCounter">0</span>/2000
+                </div>
+
+                <button
+                    type="button"
+                    class="save-memory-button"
+                    id="saveMemoryButton"
+                >
+                    SAVE MY MEMORY ♡
+                </button>
+
+                <p
+                    class="memory-question-status"
+                    id="memoryQuestionStatus"
+                ></p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MEMORY SAVED
+             ================================================= -->
+
+        <div
+            class="memory-saved-section"
+            id="memorySavedSection"
+        >
+
+            <p class="memory-saved-small">
+                i'll keep this one safe...
+            </p>
+
+            <img
+                src="gifs/page7-memory-saved.gif"
+                class="memory-saved-gif"
+                alt="cute saved memory"
+            >
+
+            <h3>
+                THIS ONE
+                <br>
+                IS SPECIAL ♡
+            </h3>
+
+            <p>
+                because some memories
+                <br>
+                are worth keeping forever.
+            </p>
+
+            <div class="saved-heart-decoration">
+                ♡　♡　♡
+            </div>
+
+            <button
+                type="button"
+                class="continue-to-letter-button"
+                id="continueToLetterButton"
+            >
+                READ MY LETTER ♡
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             SPECIAL SAYANG / BUB
+             ================================================= -->
+
+        <div
+            class="special-sayang-section"
+            id="specialSayangSection"
+        >
+
+            <div class="special-sayang-sparkles">
+                ♡　✦　˚　♡　✦　˚　♡
+            </div>
+
+            <p class="special-sayang-small">
+                WAIT... ONE MORE THING ♡
+            </p>
+
+            <h3 class="special-sayang-title">
+                POKOKNYA HARI INI
+                <br>
+                AKU MW FULL
+                <br>
+                DIPANGGIL
+                <br>
+                SAYAAANGGGG!!!!
+            </h3>
+
+            <img
+                src="gifs/page7-cute.gif"
+                class="special-sayang-gif"
+                alt="cute couple decoration"
+            >
+
+            <p class="special-sayang-text">
+                dan kalau di kampus...
+                <br>
+                panggil aku
+                <br>
+                <span>BUB, JGN NUS</span>
+                <br>
+                AWAS AJA
+            </p>
+
+            <div class="special-sayang-note">
+
+                <p>
+                    ndbole alasan
+                    <br>
+                    no lupa.
+                </p>
+
+                <strong>
+                    SAYANG &gt; BUB &gt; AKU SENANG gk tantrumm
+                </strong>
+
+            </div>
+
+            <div class="special-sayang-hearts">
+                ♡　♡　♡
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             READ MY LETTER
+             ================================================= -->
+
+        <div
+            class="letter-intro"
+            id="letterIntro"
+        >
+
+            <p>
+                okay...
+                <br>
+                now you can read this one. ♡
+            </p>
+
+            <button
+                type="button"
+                class="read-letter-button"
+                id="readLetterButton"
+            >
+                READ MY LETTER ♡
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             DEAR FUTURE US
+             ================================================= -->
+
+        <div
+            class="page-eight-ending"
+            id="pageEightEnding"
+        >
+
+            <div class="future-letter-sparkles">
+
+                <span>✦</span>
+                <span>˚</span>
+                <span>♡</span>
+                <span>✧</span>
+                <span>✦</span>
+
+            </div>
+
+            <p class="future-letter-small-title">
+                one last little thing...
+            </p>
+
+            <h3 class="future-letter-title">
+                DEAR
+                <br>
+                FUTURE US ♡
+            </h3>
+
+            <img
+                src="gifs/page7-letter.gif"
+                class="future-letter-gif"
+                alt="cute couple decoration"
+            >
+
+            <div class="future-letter-paper">
+
+                <p>
+                    if you're reading this someday,
+                    <br>
+                    i hope we've already done
+                    <br>
+                    some of the things on this list.
+                </p>
+
+                <p>
+                    maybe we're somewhere
+                    <br>
+                    we once dreamed about.
+                </p>
+
+                <p>
+                    maybe we're eating something
+                    <br>
+                    we said we'd try.
+                </p>
+
+                <img
+                    src="gifs/page7-cute.gif"
+                    class="letter-middle-gif"
+                    alt="cute decoration"
+                >
+
+                <p>
+                    maybe we're still laughing
+                    <br>
+                    at the same stupid things.
+                </p>
+
+                <p>
+                    and if some plans never happened,
+                    <br>
+                    that's okay too.
+                </p>
+
+                <p>
+                    because i think the best part
+                    <br>
+                    was always getting to do them
+                    <br>
+                    with you. ♡
+                </p>
+
+            </div>
+
+            <div class="future-letter-date">
+
+                <span>♡</span>
+
+                <p>
+                    21.09.2026
+                </p>
+
+                <span>♡</span>
+
+            </div>
+
+
+            <!-- FINAL GIF -->
+
+            <img
+                src="gifs/page7-ending.gif"
+                class="future-ending-gif"
+                alt="cute ending"
+            >
+
+
+            <!-- TO BE CONTINUED -->
+
+            <div class="to-be-continued">
+
+                <p>
+                    until the next chapter...
+                </p>
+
+                <h4>
+                    TO BE
+                    <br>
+                    CONTINUED...
+                </h4>
+
+                <div class="continued-decoration">
+                    ♡　✦　˚　♡　˚　✦　♡
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="final-love-button"
+                id="finalLoveButton"
+            >
+                I LOVE YOU ♡
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             PAGE 8 NAVIGATION
+             ================================================= -->
+
+        <div class="page-eight-navigation">
+
+            <button
+                type="button"
+                class="back-eight-button"
+                id="backEightButton"
+            >
+                BACK
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
